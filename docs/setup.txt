@@ -1,0 +1,44 @@
+Qt: 
+	http://www.qt.io/download-open-source/
+	notes:
+install Mingw options for 5.5.1 and 5.4.2.
+install all 3 android options for each 5.5.1 and 5.4.2
+
+JDK:
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+notes:
+8u65
+windows x64
+
+SDK:
+	http://dl.google.com/android/installer_r24.4.1-windows.exe
+	notes:
+install for all users
+install android 6.0
+install android version that’s on your phone (I installed 5.1)
+this is where you get your phone drivers!
+
+NDK:
+	http://dl.google.com/android/ndk/android-ndk-r10e-windows-x86_64.exe
+	notes:
+must be placed into directory with no spaces
+
+Android Studio/Ant:
+	https://developer.android.com/sdk/index.html#top
+	notes:
+Install JDK prior to this
+
+GitHub:
+	https://github.com/
+	notes:
+create user
+figure out how to add project and update 
+https://github.com/fossumja/TiltyRocket/ (also https://github.com/fossumja/TittyRocket/)
+
+
+
+Qt Setup:
+see photo
+
+to verify android device is connected
+see photo
