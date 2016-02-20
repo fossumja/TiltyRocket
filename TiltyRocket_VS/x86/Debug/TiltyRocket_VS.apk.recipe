@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths />
+  <OObjPaths />
+  <Configuration />
+  <Platform />
+  <AndroidArchitecture />
+  <!--links to other recipe files-->
+  <RecipeFiles>X:\git\TiltyRocket\TiltyRocket_VS\x86\Debug\libTiltyRocket_VS.so.recipe</RecipeFiles>
+</project>
