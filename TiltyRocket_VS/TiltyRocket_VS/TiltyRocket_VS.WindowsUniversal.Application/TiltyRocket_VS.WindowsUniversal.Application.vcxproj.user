@@ -9,4 +9,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <DebuggerFlavor>WindowsDeviceDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <RemoteMachine0>127.0.0.1:4020 (Hyrule)</RemoteMachine0>
+    <UseAuthentication0>True</UseAuthentication0>
+    <RemoteMachine1>192.168.1.64:4020 (Windows-Phone)</RemoteMachine1>
+    <UseAuthentication1>False</UseAuthentication1>
+  </PropertyGroup>
 </Project>

@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="333d0a9b-9a5b-4af7-9946-7f0ead58a67c" Publisher="CN=test" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <Identity Name="333d0a9b-9a5b-4af7-9946-7f0ead58a67c" Publisher="CN=test" Version="1.0.2.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="fdd91617-fcac-4ea8-9490-37ab04da28eb" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TiltyRocket_VS</DisplayName>
@@ -24,7 +24,18 @@
   <Applications>
     <Application Id="App" Executable="TiltyRocket_VS.WindowsUniversal.Application.exe" EntryPoint="TiltyRocket_VS_WindowsUniversal_Application.App">
       <uap:VisualElements DisplayName="TiltyRocket_VS" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="TiltyRocket_VS" BackgroundColor="#464646">
+        <uap:DefaultTile ShortName="tile">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

@@ -30,6 +30,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="TiltyRocket_VS_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="$(angle-BinPath)\libEGL.dll" />
+    <None Include="$(angle-BinPath)\libGLESv2.dll" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">

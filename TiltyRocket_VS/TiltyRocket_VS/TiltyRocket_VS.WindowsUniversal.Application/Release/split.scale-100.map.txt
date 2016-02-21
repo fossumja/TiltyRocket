@@ -1,0 +1,11 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.scale-100"
+"ResourceDimensions"		"scale-100"
+
+[Files]
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\split.scale-100.pri"			"resources.pri"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\Assets\WideLogo.scale-100.png"			"Assets\WideLogo.scale-100.png"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\Assets\StoreLogo.scale-100.png"			"Assets\StoreLogo.scale-100.png"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\Assets\SplashScreen.scale-100.png"			"Assets\SplashScreen.scale-100.png"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\Assets\SmallLogo.scale-100.png"			"Assets\SmallLogo.scale-100.png"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\Assets\Logo.scale-100.png"			"Assets\Logo.scale-100.png"

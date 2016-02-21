@@ -1,0 +1,9 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"language-en-us"
+
+[Files]
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\split.pri"			"resources.pri"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\TiltyRocket_VS\libGLESv2.dll"			"TiltyRocket_VS\libGLESv2.dll"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\TiltyRocket_VS\libEGL.dll"			"TiltyRocket_VS\libEGL.dll"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\libGLESv2.dll"			"libGLESv2.dll"
+"X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\PackageLayout\libEGL.dll"			"libEGL.dll"
