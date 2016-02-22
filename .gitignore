@@ -45,4 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Files created by Visual Studio
 TiltyRocket_VS/TiltyRocket_VS.VC.opendb
+TiltyRocket_VS/TiltyRocket_VS.sdf
