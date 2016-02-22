@@ -10,19 +10,19 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>fdd91617-fcac-4ea8-9490-37ab04da28eb</PackageIdentityName>
     <IntermediateOutputPath>X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\x64\Release\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>DB50A8389E3E843478CF368F0285FB1F820A35A4AF1FBA687A48CA7B1993D8BA</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>333d0a9b-9a5b-4af7-9946-7f0ead58a67c_1.0.0.0_x64__yps17xarsp2at</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>3938BF839E20E46DCBCF5D2CA5BE1E5F9395FFC1A9B2723FF5B349DA0B9048CB</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>333d0a9b-9a5b-4af7-9946-7f0ead58a67c_1.0.2.0_x64__yps17xarsp2at</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>333d0a9b-9a5b-4af7-9946-7f0ead58a67c_yps17xarsp2at!App</RegisteredUserModeAppID>
     <RegisteredPackageID>333d0a9b-9a5b-4af7-9946-7f0ead58a67c</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=test</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>1.0.2.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="X:\git\TiltyRocket\TiltyRocket_VS\x64\Release\TiltyRocket_VS.WindowsUniversal.Application\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-02-18T04:22:07.907</Modified>
+      <Modified>2016-02-20T16:30:46.826</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +42,7 @@
     <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-11T23:18:24.000</Modified>
+      <Modified>2016-02-20T16:24:39.433</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
@@ -76,7 +76,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\x64\Release\TiltyRocket_VS.WindowsUniversal.Application\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-02-18T04:22:07.813</Modified>
+      <Modified>2016-02-20T16:30:46.733</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
