@@ -14,3 +14,7 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 DISTFILES +=
+
+FORMS +=
+
+HEADERS +=
