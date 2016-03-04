@@ -1,0 +1,2 @@
+X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\TiltyRocket_VS.WindowsUniversal.Application.vcxproj;arm
+X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.StaticLibrary\TiltyRocket_VS.WindowsUniversal.StaticLibrary.vcxproj;arm

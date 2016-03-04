@@ -1,0 +1,8 @@
+﻿  ANDROID_HOME=C:\Program Files (x86)\Android\android-sdk
+  ANT_HOME=Y:\Programs\Microsoft Visual Studio 14.0\Apps\apache-ant-1.9.3\
+  JAVA_HOME=C:\Program Files (x86)\Java\jdk1.7.0_55
+  NDK_ROOT=C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r10e\
+  pch.h
+  SimpleRenderer.cpp
+  C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r10e\toolchains\x86-4.9\prebuilt\windows\bin\i686-linux-android-ar.exe: creating X:\git\TiltyRocket\TiltyRocket_VS\x86\Debug\libTiltyRocket_VS.a
+  TiltyRocket_VS.Android.StaticLibrary.vcxproj -> X:\git\TiltyRocket\TiltyRocket_VS\x86\Debug\libTiltyRocket_VS.a

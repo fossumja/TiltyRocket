@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework References">
+      <UniqueIdentifier>{937142AA-24D8-438C-ABAD-457275E01196}</UniqueIdentifier>
+      <Extensions>framework</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="TiltyRocket_VS.iOS">
+      <UniqueIdentifier>{d76e1de0-abef-4cfa-9642-b21c467fb720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TiltyRocket_VS.iOS\Images.xcassets">
+      <UniqueIdentifier>{bbac69f2-538a-4d4d-ab67-4b281b68bc17}</UniqueIdentifier>
+      <Extensions>TiltyRocket_VS.iOS\Images.xcassets\*</Extensions>
+    </Filter>
+    <Filter Include="TiltyRocket_VS.iOS\Images.xcassets\AppIcon.appiconset">
+      <UniqueIdentifier>{c80065af-f89e-4adc-91f7-3cb655705775}</UniqueIdentifier>
+      <Extensions>TiltyRocket_VS.iOS\Images.xcassets\AppIcon.appiconset\*</Extensions>
+    </Filter>
+    <Filter Include="TiltyRocket_VS.iOS\Supporting Files">
+      <UniqueIdentifier>{f26f38fe-983c-45f5-b936-4acd21ae1d01}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TiltyRocket_VS.iOS\AppDelegate.mm">
+      <Filter>TiltyRocket_VS.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="TiltyRocket_VS.iOS\GameViewController.mm">
+      <Filter>TiltyRocket_VS.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="TiltyRocket_VS.iOS\main.mm">
+      <Filter>TiltyRocket_VS.iOS\Supporting Files</Filter>
+    </ClCompile>
+    <ClInclude Include="TiltyRocket_VS.iOS\AppDelegate.h">
+      <Filter>TiltyRocket_VS.iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="TiltyRocket_VS.iOS\GameViewController.h">
+      <Filter>TiltyRocket_VS.iOS</Filter>
+    </ClInclude>
+    <Content Include="TiltyRocket_VS.iOS\Base.lproj\Main.storyboard">
+      <Filter>TiltyRocket_VS.iOS</Filter>
+    </Content>
+    <Content Include="TiltyRocket_VS.iOS\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <Filter>TiltyRocket_VS.iOS\Images.xcassets\AppIcon.appiconset</Filter>
+    </Content>
+    <FrameworkReference Include="System\Library\Frameworks\GLKit.framework">
+      <Filter>Framework References</Filter>
+    </FrameworkReference>
+    <FrameworkReference Include="System\Library\Frameworks\OpenGLES.framework">
+      <Filter>Framework References</Filter>
+    </FrameworkReference>
+    <FrameworkReference Include="System\Library\Frameworks\UIKit.framework">
+      <Filter>Framework References</Filter>
+    </FrameworkReference>
+    <None Include="TiltyRocket_VS.iOS\Info.plist">
+      <Filter>TiltyRocket_VS.iOS\Supporting Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

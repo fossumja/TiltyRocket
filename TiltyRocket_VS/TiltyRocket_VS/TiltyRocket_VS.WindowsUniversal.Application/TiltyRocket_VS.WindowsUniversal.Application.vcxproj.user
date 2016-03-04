@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <DebuggerFlavor>WindowsDeviceDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <DebuggerFlavor>WindowsDeviceDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <RemoteMachine0>127.0.0.1:4020 (Hyrule)</RemoteMachine0>
+    <UseAuthentication0>True</UseAuthentication0>
+    <RemoteMachine1>192.168.1.64:4020 (Windows-Phone)</RemoteMachine1>
+    <UseAuthentication1>False</UseAuthentication1>
+  </PropertyGroup>
+</Project>

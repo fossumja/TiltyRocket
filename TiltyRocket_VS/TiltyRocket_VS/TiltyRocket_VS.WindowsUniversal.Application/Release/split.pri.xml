@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="333d0a9b-9a5b-4af7-9946-7f0ead58a67c" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="libEGL.dll" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/libEGL.dll">
+				<Candidate type="Path">
+					<Value>libEGL.dll</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="libGLESv2.dll" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/libGLESv2.dll">
+				<Candidate type="Path">
+					<Value>libGLESv2.dll</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="Logo.png" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/Assets/Logo.png"/>
+				<NamedResource name="SmallLogo.png" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/Assets/SmallLogo.png"/>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/Assets/SplashScreen.png"/>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/Assets/StoreLogo.png"/>
+				<NamedResource name="WideLogo.png" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/Assets/WideLogo.png"/>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="TiltyRocket_VS">
+				<NamedResource name="libEGL.dll" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/TiltyRocket_VS/libEGL.dll">
+					<Candidate type="Path">
+						<Value>TiltyRocket_VS\libEGL.dll</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="libGLESv2.dll" uri="ms-resource://333d0a9b-9a5b-4af7-9946-7f0ead58a67c/Files/TiltyRocket_VS/libGLESv2.dll">
+					<Candidate type="Path">
+						<Value>TiltyRocket_VS\libGLESv2.dll</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

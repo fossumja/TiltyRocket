@@ -37,5 +37,5 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-#include "../../shared/shared.h"
+#include "../../../../Qt/Examples/Qt-5.5/quick/shared/shared.h"
 DECLARATIVE_EXAMPLE_MAIN(demos/calqlatr/calqlatr)

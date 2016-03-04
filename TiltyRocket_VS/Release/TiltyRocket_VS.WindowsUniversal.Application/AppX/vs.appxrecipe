@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>HYRULE</Machine>
+    <WindowsUser>test</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|Win32</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>fdd91617-fcac-4ea8-9490-37ab04da28eb</PackageIdentityName>
+    <IntermediateOutputPath>X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Release\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>4970CCF5D68FD71C056AD30FDB40C09A2EB85B2936E2A307D324DE66C8D15554</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>333d0a9b-9a5b-4af7-9946-7f0ead58a67c_1.0.0.0_x86__yps17xarsp2at</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>333d0a9b-9a5b-4af7-9946-7f0ead58a67c_yps17xarsp2at!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>333d0a9b-9a5b-4af7-9946-7f0ead58a67c</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=test</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="X:\git\TiltyRocket\TiltyRocket_VS\Release\TiltyRocket_VS.WindowsUniversal.Application\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-02-18T04:19:58.132</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\Release\TiltyRocket_VS.WindowsUniversal.Application\TiltyRocket_VS.WindowsUniversal.Application.exe">
+      <PackagePath>TiltyRocket_VS.WindowsUniversal.Application.exe</PackagePath>
+      <Modified>2016-02-18T04:19:57.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\Release\TiltyRocket_VS.WindowsUniversal.Application\TiltyRocket_VS.winmd">
+      <PackagePath>TiltyRocket_VS.winmd</PackagePath>
+      <Modified>2016-02-18T04:19:57.420</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-10-11T23:18:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-10-11T23:18:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-10-11T23:18:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-10-11T23:18:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\TiltyRocket_VS\TiltyRocket_VS.WindowsUniversal.Application\Assets\WideLogo.scale-100.png">
+      <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
+      <Modified>2015-10-11T23:18:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\packages\ANGLE.WindowsStore.2.1.2\bin\UAP\Win32\libEGL.dll">
+      <PackagePath>libEGL.dll</PackagePath>
+      <Modified>2016-02-18T04:17:01.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\packages\ANGLE.WindowsStore.2.1.2\bin\UAP\Win32\libGLESv2.dll">
+      <PackagePath>libGLESv2.dll</PackagePath>
+      <Modified>2016-02-18T04:17:01.484</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\packages\ANGLE.WindowsStore.2.1.2\bin\UAP\Win32\libEGL.dll">
+      <PackagePath>TiltyRocket_VS\libEGL.dll</PackagePath>
+      <Modified>2016-02-18T04:17:01.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\packages\ANGLE.WindowsStore.2.1.2\bin\UAP\Win32\libGLESv2.dll">
+      <PackagePath>TiltyRocket_VS\libGLESv2.dll</PackagePath>
+      <Modified>2016-02-18T04:17:01.484</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="X:\git\TiltyRocket\TiltyRocket_VS\Release\TiltyRocket_VS.WindowsUniversal.Application\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2016-02-18T04:19:57.964</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
