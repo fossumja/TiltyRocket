@@ -5,10 +5,10 @@ import QtSensors 5.0
 
 ApplicationWindow
 {
-    title: "Accelerate wing"
+    title: "Accelerate rocket"
     id: mainWindow
-    width: 320
-    height: 480
+    width: 1440
+    height: 2560
     visible: true
     Accelerometer
     {
@@ -18,8 +18,10 @@ ApplicationWindow
 
         onReadingChanged:
         {
-            var newX = (wing.x + calcRoll(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
-            var newY = (wing.y - calcPitch(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
+            var oldX = rocket.x
+            var oldY = rocket.y
+            var newX = (rocket.x + calcRoll(accel.reading.x, accel.reading.y, accel.reading.z) * 1)
+            var newY = (rocket.y - calcPitch(accel.reading.x, accel.reading.y, accel.reading.z) * 1)
 
             if (isNaN(newX) || isNaN(newY))
                 return;
@@ -27,25 +29,40 @@ ApplicationWindow
             if (newX < 0)
                 newX = 0
 
-            if (newX > mainWindow.width - wing.width)
-                newX = mainWindow.width - wing.width
+            if (newX > mainWindow.width - rocket.width)
+                newX = mainWindow.width - rocket.width
 
             if (newY < 18)
                 newY = 18
 
-            if (newY > mainWindow.height - wing.height)
-                newY = mainWindow.height - wing.height
+            if (newY > mainWindow.height - rocket.height)
+                newY = mainWindow.height - rocket.height
 
             if(mainWindow.width < mainWindow.height)
             {
-                wing.x = newX
-                wing.y = newY
+                rocket.x = newX
+                rocket.y = newY
             }
             else
             {
-                wing.y = newX
-                wing.x = newY
+                rocket.y = newX
+                rocket.x = newY
             }
+
+            if(newY > oldY)
+            {
+                rocket.angle = Math.atan((newY - oldY) / (newX - oldX))*100
+            }
+            else
+            {
+                rocket.angle = Math.atan((newY - oldY) / (newX - oldX))*100 + 180
+            }
+
+            if (isNaN(rocket.angle))
+                rocket.angle = 0
+
+            console.log(oldX, " , ", newX, " , ", rocket.angle)
+
         }
     }
 
@@ -59,16 +76,18 @@ ApplicationWindow
     }
     Image
     {
-        id: wing
-        source: "resources/ICOrisV2.jpg"
-        width: 150
-        height: 150
+        id: rocket
+        source: "resources/JunkRocket_1.png"
+        width: 350
+        height: 350
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
-        property real wingCenter: wing.width / 2
-        x: centerX - wingCenter
-        y: centerY - wingCenter
+        property real rocketCenter: rocket.width / 2
+        x: centerX - rocketCenter
+        y: centerY - rocketCenter
+        property real angle: 0
+        transform: Rotation { origin.x: 175; origin.y: 275; angle: rocket.angle }
 
         Behavior on y
         {
@@ -86,5 +105,15 @@ ApplicationWindow
                 duration: 100
             }
         }
+
+        Behavior on transform
+        {
+            SmoothedAnimation
+            {
+                easing.type: Easing.Linear
+                duration: 100
+            }
+        }
+
     }
 }
