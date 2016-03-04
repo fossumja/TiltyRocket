@@ -40,6 +40,9 @@
           </m3:ShowNameOnTiles>
         </m3:DefaultTile>
         <m3:SplashScreen Image="assets/logo_480x800.png" />
+        <m3:InitialRotationPreference>
+            <m3:Rotation Preference="portrait"/>
+        </m3:InitialRotationPreference>
       </m3:VisualElements>
     </Application>
   </Applications>

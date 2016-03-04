@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>resources/ball.png</file>
         <file>resources/ICOrisV2.jpg</file>
+        <file>resources/Wing.png</file>
     </qresource>
 </RCC>
