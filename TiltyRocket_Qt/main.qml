@@ -58,6 +58,8 @@ ApplicationWindow
                checkCollission(ball3.x, ball3.y) ||
                checkCollission(ball4.x, ball4.y)   )
             {
+                retry.visible = true;
+                exit.visible = true;
                 //Qt.quit()
             }
         }
@@ -284,6 +286,13 @@ ApplicationWindow
         y: mainWindow.height * 0.5
         text: qsTr("Retry")
         visible: false
+
+        onClicked:
+        {
+
+            retry.visible = false;
+            exit.visible = false;
+        }
     }
 
     Button {
@@ -292,5 +301,7 @@ ApplicationWindow
         y: mainWindow.height * 0.5
         text: qsTr("Exit")
         visible: false
+
+        onClicked: Qt.quit()
     }
 }
