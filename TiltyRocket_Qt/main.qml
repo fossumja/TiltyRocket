@@ -5,12 +5,13 @@ import QtSensors 5.0
 
 ApplicationWindow
 {
-    title: "Accelerate wing"
+    title: "Accelerate ship"
     id: mainWindow
-    width: 320
-    height: 480
+    width: 720
+    height: 1280
     visible: true
 
+    property real pathRadius: 200
     Accelerometer
     {
         id: accel
@@ -19,9 +20,8 @@ ApplicationWindow
 
         onReadingChanged:
         {
-            var roll = (calcRoll(accel.reading.x, accel.reading.y, accel.reading.z) * .001)
-            var newY = (wing.y - calcPitch(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
-            var radius = 100
+            var roll = (calcRoll(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
+            var newY = (redRocket.y - calcPitch(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
 
             if (isNaN(roll) || isNaN(newY))
                 return;
@@ -38,21 +38,30 @@ ApplicationWindow
             if (newY > mainWindow.height - ball1.height)
                 newY = mainWindow.height - ball1.height
 
-            ball1.t = ball1.t + roll
-            ball1.x = wing.centerX + radius * Math.cos(ball1.t)
-            ball1.y = wing.centerY + radius * Math.sin(ball1.t)
+//            ball1.t = ball1.t + roll
+            ball1.x = ball1.x + roll
+//            ball1.y = redRocket.centerY + mainWindow.pathRadius  * Math.sin(ball1.t)
 
-            ball2.t = ball2.t + roll
-            ball2.x = wing.centerX + radius * Math.cos(ball2.t)
-            ball2.y = wing.centerY + radius * Math.sin(ball2.t)
+//            ball2.t = ball2.t + roll
+              ball2.x = ball2.x + roll
+//            ball2.y = redRocket.centerY + mainWindow.pathRadius * Math.sin(ball2.t)
 
-            ball3.t = ball3.t + roll
-            ball3.x = wing.centerX + radius * Math.cos(ball3.t)
-            ball3.y = wing.centerY + radius * Math.sin(ball3.t)
+//            ball3.t = ball3.t + roll
+              ball3.x = ball3.x + roll
+//            ball3.y = redRocket.centerY + mainWindow.pathRadius * Math.sin(ball3.t)
 
-            ball4.t = ball4.t + roll
-            ball4.x = wing.centerX + radius * Math.cos(ball4.t)
-            ball4.y = wing.centerY + radius * Math.sin(ball4.t)
+//            ball4.t = ball4.t + roll
+              ball4.x = ball4.x + roll
+//            ball4.y = redRocket.centerY + mainWindow.pathRadius * Math.sin(ball4.t)
+            if(checkCollission(ball1.x, ball1.y) ||
+               checkCollission(ball2.x, ball2.y) ||
+               checkCollission(ball3.x, ball3.y) ||
+               checkCollission(ball4.x, ball4.y)   )
+            {
+                retry.visible = true;
+                exit.visible = true;
+                //Qt.quit()
+            }
         }
     }
 
@@ -64,18 +73,24 @@ ApplicationWindow
     {
          return -(Math.atan(x / Math.sqrt(y * y + z * z)) * 57.2957795);
     }
+
+    function checkCollission(x,y)
+    {
+        return (x > redRocket.x && x < (redRocket.x + redRocket.width)) && ((y > redRocket.y) && (y < redRocket.y + redRocket.height));
+    }
+
     Image
     {
-        id: wing
-        source: "resources/Wing.png"
-        width: 150
-        height: 300
+        id: redRocket
+        source: "resources/JunkRocket_1.png"
+        width: mainWindow.width/6
+        height: redRocket.width * 2
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
-        property real wingCenter: wing.width / 2
-        x: centerX - wingCenter
-        y: centerY - wingCenter
+        property real redRocketCenter: redRocket.width / 2
+        x: centerX - redRocketCenter
+        y: mainWindow.height - (redRocket.height + redRocket.width/4)
 
         Behavior on y
         {
@@ -93,21 +108,37 @@ ApplicationWindow
                 duration: 100
             }
         }
+        MouseArea
+        {
+            width: parent.width
+            height: parent.height
+            onClicked: Qt.quit()
+        }
     }
+
     Image
     {
         id: ball1
-        source: "resources/ball.png"
-        width: 30
-        height: 30
+        source: "resources/Bluebubble.svg"
+        width: 60
+        height: 60
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
         property real ballCenter: ball1.width / 2
-        property real radius: 100
         property real t: 0
-        x: centerX + radius * Math.cos(t)
-        y: centerY + radius * Math.sin(t)
+
+        x: mainWindow.width/2
+        y: mainWindow.height/2//-ball1.height
+
+        SequentialAnimation on y
+        {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation {duration: Math.random()*1000}
+            //NumberAnimation {to: (mainWindow.height + ball1.height * 2); duration: 5000 }
+            PropertyAction {property: "x"; value: Math.random()* mainWindow.width }
+        }
 
         Behavior on y
         {
@@ -130,16 +161,24 @@ ApplicationWindow
     {
         id: ball2
         source: "resources/ball.png"
-        width: 30
-        height: 30
+        width: 60
+        height: 60
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
         property real ballCenter: ball1.width / 2
-        property real radius: 100
         property real t: Math.PI/2
-        x: centerX + radius * Math.cos(t)
-        y: centerY + radius * Math.sin(t)
+
+        x: Math.random() * mainWindow.width
+        y: -ball2.height
+
+        SequentialAnimation on y
+        {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation { duration:Math.random() * 5000 }
+            NumberAnimation { to: (mainWindow.height + ball2.height * 2); duration: 5000 }
+        }
 
         Behavior on y
         {
@@ -163,16 +202,24 @@ ApplicationWindow
     {
         id: ball3
         source: "resources/ball.png"
-        width: 30
-        height: 30
+        width: 60
+        height: 60
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
         property real ballCenter: ball1.width / 2
-        property real radius: 100
         property real t: Math.PI
-        x: centerX + radius * Math.cos(t)
-        y: centerY + radius * Math.sin(t)
+
+        x: Math.random() * mainWindow.width
+        y: -ball3.height
+
+        SequentialAnimation on y
+        {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation { duration:Math.random() * 5000 }
+            NumberAnimation {to: (mainWindow.height + ball3.height * 2); duration: 5000 }
+        }
 
         Behavior on y
         {
@@ -196,16 +243,24 @@ ApplicationWindow
     {
         id: ball4
         source: "resources/ball.png"
-        width: 30
-        height: 30
+        width: 60
+        height: 60
         smooth: true
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
         property real ballCenter: ball1.width / 2
-        property real radius: 100
         property real t: 3*(Math.PI)/2
-        x: centerX + radius * Math.cos(t)
-        y: centerY + radius * Math.sin(t)
+
+        x: Math.random() * mainWindow.width
+        y: -ball4.height
+
+        SequentialAnimation on y
+        {
+            running: true
+            loops: Animation.Infinite
+            NumberAnimation { duration:Math.random() * 5000 }
+            NumberAnimation {to: (mainWindow.height + ball4.height * 2); duration: 5000 }
+        }
 
         Behavior on y
         {
@@ -223,5 +278,30 @@ ApplicationWindow
                 duration: 100
             }
         }
+    }
+
+    Button {
+        id: retry
+        x: mainWindow.width * 0.25
+        y: mainWindow.height * 0.5
+        text: qsTr("Retry")
+        visible: false
+
+        onClicked:
+        {
+
+            retry.visible = false;
+            exit.visible = false;
+        }
+    }
+
+    Button {
+        id: exit
+        x: mainWindow.width * 0.75
+        y: mainWindow.height * 0.5
+        text: qsTr("Exit")
+        visible: false
+
+        onClicked: Qt.quit()
     }
 }
