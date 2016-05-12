@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap mp mobile">
 
   <Identity
-    Name="b1fa5088-d757-4686-8837-6495309e78e0"
+    Name="7c6648c3-e281-450f-b12b-a00f5e444fac"
     Publisher="CN=Max_test"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
 
-  <mp:PhoneIdentity PhoneProductId="b1fa5088-d757-4686-8837-6495309e78e0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="7c6648c3-e281-450f-b12b-a00f5e444fac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TiltyRocket_Qt</DisplayName>
+    <DisplayName>shakeit</DisplayName>
     <PublisherDisplayName>Default publisher display name</PublisherDisplayName>
     <Logo>assets/logo_store.png</Logo>
   </Properties>
@@ -32,10 +32,10 @@
 
   <Applications>
     <Application Id="App"
-      Executable="TiltyRocket_Qt.exe"
-      EntryPoint="TiltyRocket_Qt.App">
+      Executable="shakeit.exe"
+      EntryPoint="shakeit.App">
       <uap:VisualElements
-        DisplayName="TiltyRocket_Qt"
+        DisplayName="shakeit"
         Description="Default package description"
         BackgroundColor="green"
         Square150x150Logo="assets/logo_150x150.png"

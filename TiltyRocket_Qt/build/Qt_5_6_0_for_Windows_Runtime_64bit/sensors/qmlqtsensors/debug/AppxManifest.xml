@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap mp mobile">
 
   <Identity
-    Name="b1fa5088-d757-4686-8837-6495309e78e0"
+    Name="3529397c-fdd6-4784-bd07-e4304fbd26c5"
     Publisher="CN=Max_test"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
 
-  <mp:PhoneIdentity PhoneProductId="b1fa5088-d757-4686-8837-6495309e78e0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3529397c-fdd6-4784-bd07-e4304fbd26c5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TiltyRocket_Qt</DisplayName>
+    <DisplayName>qmlqtsensors</DisplayName>
     <PublisherDisplayName>Default publisher display name</PublisherDisplayName>
     <Logo>assets/logo_store.png</Logo>
   </Properties>
@@ -32,10 +32,10 @@
 
   <Applications>
     <Application Id="App"
-      Executable="TiltyRocket_Qt.exe"
-      EntryPoint="TiltyRocket_Qt.App">
+      Executable="qmlqtsensors.exe"
+      EntryPoint="qmlqtsensors.App">
       <uap:VisualElements
-        DisplayName="TiltyRocket_Qt"
+        DisplayName="qmlqtsensors"
         Description="Default package description"
         BackgroundColor="green"
         Square150x150Logo="assets/logo_150x150.png"

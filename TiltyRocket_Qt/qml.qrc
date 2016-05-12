@@ -1,10 +1,13 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Asteroid.qml</file>
+        <file>itemCreation.js</file>
+    </qresource>
+    <qresource prefix="/Images">
         <file>resources/ball.png</file>
-        <file>resources/ICOrisV2.jpg</file>
-        <file>resources/Wing.png</file>
-        <file>resources/JunkRocket_1.png</file>
         <file>resources/Bluebubble.svg</file>
+        <file>resources/JunkRocket_1.png</file>
+        <file>resources/Wing.png</file>
     </qresource>
 </RCC>

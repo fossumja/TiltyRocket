@@ -8,22 +8,22 @@
   IgnorableNamespaces="uap mp mobile">
 
   <Identity
-    Name="b1fa5088-d757-4686-8837-6495309e78e0"
+    Name="1117ffb8-dc7e-4fcd-840f-c00b6656b84d"
     Publisher="CN=Max_test"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
 
-  <mp:PhoneIdentity PhoneProductId="b1fa5088-d757-4686-8837-6495309e78e0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="1117ffb8-dc7e-4fcd-840f-c00b6656b84d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>TiltyRocket_Qt</DisplayName>
+    <DisplayName>sensor_explorer</DisplayName>
     <PublisherDisplayName>Default publisher display name</PublisherDisplayName>
     <Logo>assets/logo_store.png</Logo>
   </Properties>
 
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10240.0" MaxVersionTested="10.0.10586.0" />
-    <PackageDependency Name="Microsoft.VCLibs.140.00.Debug" MinVersion="14.0.0.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.0.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
   </Dependencies>
 
   <Resources>
@@ -32,10 +32,10 @@
 
   <Applications>
     <Application Id="App"
-      Executable="TiltyRocket_Qt.exe"
-      EntryPoint="TiltyRocket_Qt.App">
+      Executable="sensor_explorer.exe"
+      EntryPoint="sensor_explorer.App">
       <uap:VisualElements
-        DisplayName="TiltyRocket_Qt"
+        DisplayName="sensor_explorer"
         Description="Default package description"
         BackgroundColor="green"
         Square150x150Logo="assets/logo_150x150.png"
