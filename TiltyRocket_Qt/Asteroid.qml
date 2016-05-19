@@ -7,23 +7,41 @@ Image
 {
     id: rootAsteroid
     source: "Images/resources/ball.png"
-    width: 60
-    height: 60
+    width: mainWindow.width/20
+    height: mainWindow.width/20
     smooth: true
     property string componentFile: "Asteroid.qml"
     property bool created: false
     property real windowWidth
     property real windowHeight
 
+    property bool collision: false
+    property double rocketMargin: 10
+    Rectangle
+    {
+        id: rootAsteroidBorder
+        opacity: 0.5
+        anchors.fill: rootAsteroid
+        border.width: 5
+        border.color: checkCollission(rootAsteroid.x, rootAsteroid.y) ? "red" : "green"
+    }
+
     function checkCollission(x,y)
     {
-        var collision = ((x > mainWindow.rocketX) && x < (mainWindow.rocketX + mainWindow.rocketWidth))
-            && ((y > mainWindow.rocketY) && (y < mainWindow.rocketY + mainWindow.rocketHeight))
-        if(collision){mainWindow.gameOver = true}
-        return (collision);
+        return (   ((x + width > (mainWindow.rocketX   + mainWindow.rocketMargin  )) && (x < (mainWindow.rocketX + mainWindow.rocketWidth    - mainWindow.rocketMargin  )))
+                && ((y > (mainWindow.rocketY /*+ mainWindow.rocketMargin*/)) && (y < (mainWindow.rocketY + mainWindow.rocketHeight /*- mainWindow.rocketMargin*/))))
     }
 
     y: -rootAsteroid.height
+
+    onCollisionChanged:
+    {
+        if(collision)
+        {
+            mainWindow.gameOver = true;
+        }
+    }
+
     onCreatedChanged:
     {
         if (created)
@@ -44,6 +62,8 @@ Image
     {
         id: dropAnim
         running: false
+
+        NumberAnimation { duration:Math.random() * 5000 }
         NumberAnimation
         {
             id: dropYAnim
@@ -74,9 +94,16 @@ Image
             {
 
                 rootAsteroid.x += roll
-                checkCollission(rootAsteroid.x, rootAsteroid.y)
+                rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
+                /* Should probably put an animation here so they don't just disappear */
+                if(mainWindow.gameOver)
+                {
+                    rootAsteroid.created = false;
+                    rootAsteroid.destroy()
+                }
             }
         }
     }
 }
+
 

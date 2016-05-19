@@ -13,24 +13,86 @@ ApplicationWindow
     visible: true
 
     property int activeAsteroids: 0
+    property int totalAsteroids: 10
+
+    property int  score: 0
+    property double additionalAsteroids: Math.floor(score/100)
     property bool gameOver: false
+
     property alias rocketX: redRocket.x
     property alias rocketY: redRocket.y
     property alias rocketWidth: redRocket.width
     property alias rocketHeight: redRocket.height
+    property alias rocketMargin: redRocket.rocketMargin
 
-    Image
+    onGameOverChanged:
+    {
+        if(!gameOver)
+        {
+
+            var i
+            for(i=0;i<totalAsteroids;i++)
+            {
+                Creator.startDrop();
+            }
+        }
+    }
+
+    onAdditionalAsteroidsChanged:
+    {
+        if(!gameOver)
+        {
+            var i
+            for(i=activeAsteroids;i<totalAsteroids + additionalAsteroids;i++)
+            {
+                Creator.startDrop();
+            }
+        }
+        console.log("Active Asteroids: " + activeAsteroids +"    Total Asteroids: "+totalAsteroids + additionalAsteroids)
+    }
+
+    Rectangle
     {
         id: redRocket
-        source: "Images/resources/JunkRocket_1.png"
         width: mainWindow.width/6
         height: redRocket.width * 2
         smooth: true
+
         property real centerX: mainWindow.width / 2
         property real centerY: mainWindow.height / 2
         property real redRocketCenter: redRocket.width / 2
+        property real rocketMargin: redRocket.width /3
         x: centerX - redRocketCenter
         y: mainWindow.height - (redRocket.height + redRocket.width/4)
+
+        /**** Debuging ****/
+        Rectangle
+        {
+            anchors.fill: redRocket
+            anchors.leftMargin: rocketMargin
+            anchors.rightMargin: rocketMargin
+
+            anchors.onFillChanged: anchors.fill = redRocket
+            border.width: 5
+            border.color: "magenta"
+        }
+        /**** Debuging ****/
+
+        Image
+        {
+            anchors.fill: redRocket
+            source: "Images/resources/JunkRocket_1.png"
+        }
+
+        MouseArea
+        {
+            width: parent.width
+            height: parent.height
+            onClicked:
+            {
+                Creator.startDrop();
+            }
+        }
 
         Behavior on y
         {
@@ -48,11 +110,12 @@ ApplicationWindow
                 duration: 100
             }
         }
-        MouseArea
+    }
+    onActiveAsteroidsChanged:
+    {
+        if(!gameOver)
         {
-            width: parent.width
-            height: parent.height
-            onClicked:
+            if(activeAsteroids < totalAsteroids)
             {
                 Creator.startDrop();
             }
@@ -61,78 +124,38 @@ ApplicationWindow
 
     Text
     {
-        property double value: 2 //Math.random()
         id: textBox1
         color: "#431cf1"
-        text: value
+        text: mainWindow.score;
     }
 
-    Image
+    Timer
     {
-        id: ball1
-        source: "Images/resources/Bluebubble.svg"
-        width: 60
-        height: 60
-        smooth: true
-        property real centerX: mainWindow.width / 2
-        property real centerY: mainWindow.height / 2
-        property real ballCenter: ball1.width / 2
-        property real t: 0
-
-
-        function modX(myX, randomX)
+        id: timer
+        interval: 100;
+        running: true;
+        repeat: true;
+        onTriggered:
         {
-            ball1.x = myX;
-        }
-
-//        x: {if(y < mainWindow.height + ball1.height) {return (Math.random() * mainWindow.width)}
-//        else {/*return (x + 2)*/}}
-        y: -ball1.height
-
-        SequentialAnimation on y
-        {
-            running: true
-            loops: Animation.Infinite
-            NumberAnimation {duration: Math.random()*500}
-            NumberAnimation {to: (mainWindow.height + ball1.height * 2); duration: 5000 }
-        }
-//        SequentialAnimation {
-//            running: true
-//            loops: Animation.Infinite
-//            NumberAnimation { target: ball1; property: "x"; to: 0; duration: 1000 }
-////            NumberAnimation { target: ball1; property: "y"; to: 50; duration: 1000 }
-//            NumberAnimation { target: ball1; property: "x"; to: 500; duration: 1000 }
-////            NumberAnimation { target: ball1; property: "y"; to: 500; duration: 1000 }
-//        }
-
-
-        Behavior on y{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
-        Behavior on x{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
-
-        onYChanged: {
-           if (y < mainWindow.height + ball1.height) {ball1.x = Qt.binding( function() {return Math.random() * mainWindow.width})}
-        }
-        Text
-        {
-            anchors.centerIn: ball1
-            text: Math.round(ball1.x)
-
+            if(!mainWindow.gameOver && !blastOffButton.visible) score = score + (1);
         }
     }
-
 
     Button {
         id: blastOffButton
         anchors.top: redRocket.top
-        //anchors.verticalCenter: redRocket.centerX
+        anchors.left: redRocket.left
         text: qsTr("Blast Off!")
         visible: true
 
         onClicked:
         {
-
+            var i = 0;
             blastOffButton.visible = false
-
+            for(i=0;i<totalAsteroids;i++)
+            {
+                Creator.startDrop();
+            }
         }
     }
 
@@ -160,6 +183,58 @@ ApplicationWindow
     }
 }
 
+//Image
+//{
+//    id: ball1
+//    source: "Images/resources/Bluebubble.svg"
+//    width: 60
+//    height: 60
+//    smooth: true
+//    property real centerX: mainWindow.width / 2
+//    property real centerY: mainWindow.height / 2
+//    property real ballCenter: ball1.width / 2
+//    property real t: 0
+
+
+//    function modX(myX, randomX)
+//    {
+//        ball1.x = myX;
+//    }
+
+////        x: {if(y < mainWindow.height + ball1.height) {return (Math.random() * mainWindow.width)}
+////        else {/*return (x + 2)*/}}
+//    y: -ball1.height
+
+//    SequentialAnimation on y
+//    {
+//        running: true
+//        loops: Animation.Infinite
+//        NumberAnimation {duration: Math.random()*500}
+//        NumberAnimation {to: (mainWindow.height + ball1.height * 2); duration: 5000 }
+//    }
+////        SequentialAnimation {
+////            running: true
+////            loops: Animation.Infinite
+////            NumberAnimation { target: ball1; property: "x"; to: 0; duration: 1000 }
+//////            NumberAnimation { target: ball1; property: "y"; to: 50; duration: 1000 }
+////            NumberAnimation { target: ball1; property: "x"; to: 500; duration: 1000 }
+//////            NumberAnimation { target: ball1; property: "y"; to: 500; duration: 1000 }
+////        }
+
+
+//    Behavior on y{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
+//    Behavior on x{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
+
+//    onYChanged: {
+//       if (y < mainWindow.height + ball1.height) {ball1.x = Qt.binding( function() {return Math.random() * mainWindow.width})}
+//    }
+//    Text
+//    {
+//        anchors.centerIn: ball1
+//        text: Math.round(ball1.x)
+
+//    }
+//}
 
 //Accelerometer
 //{
