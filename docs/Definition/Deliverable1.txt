@@ -1,0 +1,29 @@
+	1. Score tracking with history
+	2. Start menu 
+		a. Donate 
+		b. Splash
+		c. Credits
+		d. Feedback 
+		e. Share button - V2
+	3. Pause 
+		a. Prompts start menu
+		b. Resume
+	4. Mechanics
+		a. Rotating but not moving rocket
+		b. Asteroids generate from edge of screen that rocket is traveling towards
+		c. Background scrolls with direction of travel
+		d. 3 collisions = game over
+		e. Accurate hitboxes 
+		f. Should feel like main propulsion comes from the rear
+		g. Increasing number of asteroids
+		h. Constant number of asteroids on screen ( no wave like look)
+		i. Slowdown (maybe, need animation?)
+		j. Lazer - V2
+	5. Animations
+		a. Side thrusters
+		b. Rear thrust
+		c. Asteroid breakup 
+		d. Rocket damage
+			i. Reflects hitbox location
+		
+	6. background
