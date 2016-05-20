@@ -78,6 +78,28 @@ ApplicationWindow
         }
         /**** Debuging ****/
 
+        Accelerometer
+        {
+            id: rocketAccel
+            dataRate: 100
+            active: true
+
+            function calcRoll(x,y,z)
+            {
+                return -(Math.atan(x / Math.sqrt(y * y + z * z)) * 57.2957795);
+            }
+            onReadingChanged:
+            {
+
+                var roll = (calcRoll(rocketAccel.reading.x, rocketAccel.reading.y, rocketAccel.reading.z) * .1)
+
+                if(true)
+                {
+
+                    redRocket.rotation -= roll
+                }
+            }
+        }
         Image
         {
             anchors.fill: redRocket

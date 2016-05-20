@@ -38,7 +38,7 @@ Image
     {
         if(collision)
         {
-            mainWindow.gameOver = true;
+//            mainWindow.gameOver = true;
         }
     }
 
