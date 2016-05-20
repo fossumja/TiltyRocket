@@ -38,7 +38,8 @@ Image
     {
         if(collision)
         {
-//            mainWindow.gameOver = true;
+            if(!mainWindow.debugMode)
+            mainWindow.gameOver = true;
         }
     }
 
@@ -88,7 +89,7 @@ Image
         onReadingChanged:
         {
 
-            var roll = (calcRoll(asteroidAccel.reading.x, asteroidAccel.reading.y, asteroidAccel.reading.z) * .1)
+            var roll = (calcRoll(asteroidAccel.reading.x, asteroidAccel.reading.y, asteroidAccel.reading.z) * .5)
 
             if(created)
             {

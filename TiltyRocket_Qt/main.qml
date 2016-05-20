@@ -17,7 +17,9 @@ ApplicationWindow
     property int totalAsteroids: startingAsteroids + additionalAsteroids
 
     property int  score: 0
-    property double additionalAsteroids: Math.floor(score/100)
+    property double additionalAsteroids: gameOver ? 0 : Math.floor(score/100)
+
+    property bool debugMode: false
     property bool gameOver: false
 
     property alias rocketX: redRocket.x
@@ -93,15 +95,15 @@ ApplicationWindow
             onReadingChanged:
             {
 
-                var roll = (calcRoll(rocketAccel.reading.x, rocketAccel.reading.y, rocketAccel.reading.z) * .1)
+                var roll = (calcRoll(rocketAccel.reading.x, rocketAccel.reading.y, rocketAccel.reading.z)* 0.2)
 
                 if(roll < 0)
                 {
-                    redRocket.rotation = redRocket.rotation < 45 ? redRocket.rotation - (roll * 0.2) : redRocket.rotation
+                    redRocket.rotation = redRocket.rotation < 45 ? redRocket.rotation - (roll ) : redRocket.rotation
                 }
                 else
                 {
-                    redRocket.rotation = redRocket.rotation > -45 ? redRocket.rotation - (roll * 0.2) : redRocket.rotation
+                    redRocket.rotation = redRocket.rotation > -45 ? redRocket.rotation - (roll ) : redRocket.rotation
                 }
             }
         }
@@ -165,6 +167,7 @@ ApplicationWindow
         onTriggered:
         {
             if(!mainWindow.gameOver && !blastOffButton.visible) score = score + (1);
+            else score = 0
         }
     }
 
