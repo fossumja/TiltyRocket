@@ -13,7 +13,8 @@ ApplicationWindow
     visible: true
 
     property int activeAsteroids: 0
-    property int totalAsteroids: 10
+    property int startingAsteroids: 10
+    property int totalAsteroids: startingAsteroids + additionalAsteroids
 
     property int  score: 0
     property double additionalAsteroids: Math.floor(score/100)
@@ -31,7 +32,7 @@ ApplicationWindow
         {
 
             var i
-            for(i=0;i<totalAsteroids;i++)
+            for(i=0;i<startingAsteroids;i++)
             {
                 Creator.startDrop();
             }
@@ -43,12 +44,12 @@ ApplicationWindow
         if(!gameOver)
         {
             var i
-            for(i=activeAsteroids;i<totalAsteroids + additionalAsteroids;i++)
+            for(i=activeAsteroids;i<totalAsteroids;i++)
             {
                 Creator.startDrop();
             }
         }
-        console.log("Active Asteroids: " + activeAsteroids +"    Total Asteroids: "+totalAsteroids + additionalAsteroids)
+        //console.log("Active Asteroids: " + activeAsteroids +"    Total Asteroids: "+totalAsteroids + additionalAsteroids)
     }
 
     Rectangle
@@ -78,6 +79,7 @@ ApplicationWindow
         }
         /**** Debuging ****/
 
+        onRotationChanged: console.log(activeAsteroids)
         Accelerometer
         {
             id: rocketAccel
@@ -93,10 +95,13 @@ ApplicationWindow
 
                 var roll = (calcRoll(rocketAccel.reading.x, rocketAccel.reading.y, rocketAccel.reading.z) * .1)
 
-                if(true)
+                if(roll < 0)
                 {
-
-                    redRocket.rotation -= roll
+                    redRocket.rotation = redRocket.rotation < 45 ? redRocket.rotation - (roll * 0.2) : redRocket.rotation
+                }
+                else
+                {
+                    redRocket.rotation = redRocket.rotation > -45 ? redRocket.rotation - (roll * 0.2) : redRocket.rotation
                 }
             }
         }
@@ -174,7 +179,7 @@ ApplicationWindow
         {
             var i = 0;
             blastOffButton.visible = false
-            for(i=0;i<totalAsteroids;i++)
+            for(i=0;i<startingAsteroids;i++)
             {
                 Creator.startDrop();
             }

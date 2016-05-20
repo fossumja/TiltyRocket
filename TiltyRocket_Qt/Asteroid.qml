@@ -63,7 +63,7 @@ Image
         id: dropAnim
         running: false
 
-        NumberAnimation { duration:Math.random() * 5000 }
+        NumberAnimation { duration:Math.random() * 10000 }
         NumberAnimation
         {
             id: dropYAnim
