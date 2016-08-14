@@ -3,6 +3,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Window 2.2
 import QtSensors 5.0
 import "itemCreation.js" as Creator
+import QtQuick.LocalStorage 2.0
 
 ApplicationWindow
 {
