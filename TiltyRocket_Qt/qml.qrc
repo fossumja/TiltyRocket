@@ -3,6 +3,7 @@
         <file>main.qml</file>
         <file>Asteroid.qml</file>
         <file>itemCreation.js</file>
+        <file>ScoreBoard.qml</file>
     </qresource>
     <qresource prefix="/Images">
         <file>resources/ball.png</file>
