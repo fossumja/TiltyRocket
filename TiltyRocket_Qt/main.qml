@@ -1,5 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.0
+import QtQuick.LocalStorage 2.0
 import QtQuick.Window 2.2
 import QtSensors 5.0
 import "itemCreation.js" as Creator
@@ -31,7 +32,7 @@ ApplicationWindow
 
     onGameOverChanged:
     {
-        if(!gameOver)
+        if(!gameOver) /* Create more asteroids */
         {
 
             var i
@@ -39,6 +40,10 @@ ApplicationWindow
             {
                 Creator.startDrop();
             }
+        }
+        else /* Display the score board */
+        {
+            Qt.createComponent("ScoreBoard.qml").createObject(mainWindow, {});
         }
     }
 
@@ -189,212 +194,4 @@ ApplicationWindow
             }
         }
     }
-
-    Button {
-        id: retry
-        x: mainWindow.width * 0.25
-        y: mainWindow.height * 0.5
-        text: qsTr("Retry")
-        visible: gameOver ? true: false
-
-        onClicked:
-        {
-            gameOver = false
-        }
-    }
-
-    Button {
-        id: exit
-        x: mainWindow.width * 0.75
-        y: mainWindow.height * 0.5
-        text: qsTr("Exit")
-        visible: gameOver ? true: false
-
-        onClicked: Qt.quit()
-    }
 }
-
-//Image
-//{
-//    id: ball1
-//    source: "Images/resources/Bluebubble.svg"
-//    width: 60
-//    height: 60
-//    smooth: true
-//    property real centerX: mainWindow.width / 2
-//    property real centerY: mainWindow.height / 2
-//    property real ballCenter: ball1.width / 2
-//    property real t: 0
-
-
-//    function modX(myX, randomX)
-//    {
-//        ball1.x = myX;
-//    }
-
-////        x: {if(y < mainWindow.height + ball1.height) {return (Math.random() * mainWindow.width)}
-////        else {/*return (x + 2)*/}}
-//    y: -ball1.height
-
-//    SequentialAnimation on y
-//    {
-//        running: true
-//        loops: Animation.Infinite
-//        NumberAnimation {duration: Math.random()*500}
-//        NumberAnimation {to: (mainWindow.height + ball1.height * 2); duration: 5000 }
-//    }
-////        SequentialAnimation {
-////            running: true
-////            loops: Animation.Infinite
-////            NumberAnimation { target: ball1; property: "x"; to: 0; duration: 1000 }
-//////            NumberAnimation { target: ball1; property: "y"; to: 50; duration: 1000 }
-////            NumberAnimation { target: ball1; property: "x"; to: 500; duration: 1000 }
-//////            NumberAnimation { target: ball1; property: "y"; to: 500; duration: 1000 }
-////        }
-
-
-//    Behavior on y{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
-//    Behavior on x{SmoothedAnimation{easing.type: Easing.Linear; duration: 100}}
-
-//    onYChanged: {
-//       if (y < mainWindow.height + ball1.height) {ball1.x = Qt.binding( function() {return Math.random() * mainWindow.width})}
-//    }
-//    Text
-//    {
-//        anchors.centerIn: ball1
-//        text: Math.round(ball1.x)
-
-//    }
-//}
-
-//Accelerometer
-//{
-//    id: accel
-//    dataRate: 100
-//    active: true
-
-//    function calcPitch(x,y,z)
-//    {
-//        return -(Math.atan(y / Math.sqrt(x * x + z * z)) * 57.2957795);
-//    }
-//    function calcRoll(x,y,z)
-//    {
-//         return -(Math.atan(x / Math.sqrt(y * y + z * z)) * 57.2957795);
-//    }
-//    onReadingChanged:
-//    {
-
-//        var roll = (calcRoll(accel.reading.x, accel.reading.y, accel.reading.z) * .1)
-//        textBox1.text = roll;
-//          //ball1.x = ball1.x + roll; event.accepted = false;
-
-//        //if((ball1.y > 0) && (ball1.y < mainWindow.height)) {
-//        //    ball1.modX(ball1.x + roll)
-//        // console.log(ball1.y)
-//        //}
-//          //asteroid0.x = Qt.binding ( function() {return asteroid0.x + roll})
-//          ball3.x = ball3.x + roll
-//          ball4.x = ball4.x + roll
-
-//        if(checkCollission(ball1.x, ball1.y) ||
-//           //checkCollission(asteroid1.x, asteroid1.y) ||
-//           checkCollission(ball3.x, ball3.y) ||
-//           checkCollission(ball4.x, ball4.y)   )
-//        {
-//            retry.visible = true;
-//            exit.visible = true;
-//            //Qt.quit()
-//        }
-//    }
-//}
-//Image
-//{
-//    id: ball3
-//    source: "Images/resources/ball.png"
-//    width: 60
-//    height: 60
-//    smooth: true
-//    property real centerX: mainWindow.width / 2
-//    property real centerY: mainWindow.height / 2
-//    property real ballCenter: ball1.width / 2
-//    property real t: Math.PI
-
-//    x: Math.random() * mainWindow.width
-//    y: -ball3.height
-
-//    SequentialAnimation on y
-//    {
-//        running: true
-//        loops: Animation.Infinite
-//        NumberAnimation { duration:Math.random() * 5000 }
-//        NumberAnimation {to: (mainWindow.height + ball3.height * 2); duration: 5000 }
-//    }
-
-//    Behavior on y
-//    {
-//        SmoothedAnimation
-//        {
-//            easing.type: Easing.Linear
-//            duration: 100
-//        }
-//    }
-//    Behavior on x
-//    {
-//        SmoothedAnimation
-//        {
-//            easing.type: Easing.Linear
-//            duration: 100
-//        }
-//    }
-//    Text
-//    {
-//        anchors.centerIn: parent
-//        text: Math.round(parent.x)
-//    }
-//}
-
-//Image
-//{
-//    id: ball4
-//    source: "Images/resources/ball.png"
-//    width: 60
-//    height: 60
-//    smooth: true
-//    property real centerX: mainWindow.width / 2
-//    property real centerY: mainWindow.height / 2
-//    property real ballCenter: ball1.width / 2
-//    property real t: 3*(Math.PI)/2
-
-//    x: Math.random() * mainWindow.width
-//    y: -ball4.height
-
-//    SequentialAnimation on y
-//    {
-//        running: true
-//        loops: Animation.Infinite
-//        NumberAnimation { duration:Math.random() * 5000 }
-//        NumberAnimation {to: (mainWindow.height + ball4.height * 2); duration: 5000 }
-//    }
-
-//    Behavior on y
-//    {
-//        SmoothedAnimation
-//        {
-//            easing.type: Easing.Linear
-//            duration: 100
-//        }
-//    }
-//    Behavior on x
-//    {
-//        SmoothedAnimation
-//        {
-//            easing.type: Easing.Linear
-//            duration: 100
-//        }
-//    }
-//    Text
-//    {
-//        anchors.centerIn: parent
-//        text: Math.round(parent.x)
-//    }
-//}
