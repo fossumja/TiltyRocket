@@ -733,3 +733,5 @@ TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_32bit/quick/window/release/ass
 TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_32bit/quick/window/release/assets/logo_44x44.png
 TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_32bit/quick/window/release/assets/logo_620x300.png
 TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_32bit/quick/window/release/assets/logo_store.png
+TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_64bit/debug/QtQuick/LocalStorage/plugins.qmltypes
+TiltyRocket_Qt/build/Qt_5_6_0_for_Windows_Runtime_64bit/debug/QtQuick/LocalStorage/qmldir
