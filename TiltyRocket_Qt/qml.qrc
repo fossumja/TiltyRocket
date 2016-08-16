@@ -4,8 +4,9 @@
         <file>Asteroid.qml</file>
         <file>itemCreation.js</file>
         <file>ScoreBoard.qml</file>
+        <file>Home.qml</file>
     </qresource>
-    <qresource prefix="/Images">
+    <qresource prefix="/images">
         <file>resources/ball.png</file>
         <file>resources/Bluebubble.svg</file>
         <file>resources/JunkRocket_1.png</file>

@@ -28,7 +28,7 @@ function loadComponent() {
 
 function createItem() {
     if (itemComponent.status === Component.Ready && draggedItem == null) {
-        draggedItem = itemComponent.createObject(mainWindow, {"image": "Images/resources/ball.png", "x": startPos, "y": -60, "z": 3});
+        draggedItem = itemComponent.createObject(mainWindow, {"image": "images/resources/ball.png", "x": startPos, "y": -60, "z": 3});
     }
     else if (itemComponent.status === Component.Error)
     {

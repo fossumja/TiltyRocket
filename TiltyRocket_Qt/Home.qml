@@ -1,43 +1,56 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
-
-Item {
-    id: scoreBoardPopup
+Item
+{
+    id: home
     anchors.fill: parent
     // Add a simple animation to fade in the popup
     // let the opacity go from 0 to 1 in 400ms
-    PropertyAnimation { target: scoreBoardPopup; property: "opacity";
+    PropertyAnimation { target: home; property: "opacity";
                                   duration: 400; from: 0; to: 1;
                                   easing.type: Easing.InOutQuad ; running: true }
 
     // This rectange is the a overlay to partially show the parent through it
     // and clicking outside of the 'dialog' popup will do 'nothing'
-    Rectangle {
+    Rectangle
+    {
         anchors.fill: parent
         id: overlay
         color: "#000000"
         opacity: 0.6
         // add a mouse area so that clicks outside
         // the dialog window will not do anything
-        MouseArea {
+        MouseArea
+        {
             anchors.fill: parent
+        }
+        Text
+        {
+            text: "Tilty Rocket!"
+            anchors.horizontalCenter: parent
+            anchors.top: parent
+            anchors.topMargin: 5
         }
     }
 
     // This rectangle is the actual popup
-    Rectangle {
+    Rectangle
+    {
         id: scoreBoardWindow
         width: 100
         height: 62
         radius: 10
         anchors.centerIn: parent
 
-        Text {
+        Text
+        {
             anchors.centerIn: parent
             anchors.top: parent.top
             anchors.topMargin: 5
             text: "Leaderboard"
-            Button {
+        }
+            Button
+            {
                 id: retry
                 x: parent.width * 0.25
                 y: parent.height * 0.5
@@ -76,4 +89,6 @@ Item {
             }
         }
     }
+
+
 }
