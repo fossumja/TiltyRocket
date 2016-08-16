@@ -6,7 +6,7 @@ import "itemCreation.js" as Creator
 Image
 {
     id: rootAsteroid
-    source: "images/resources/ball.png"
+    source: "/images/ball.png"
     width: mainWindow.width/20
     height: mainWindow.width/20
     smooth: true
@@ -33,7 +33,6 @@ Image
     }
 
     y: -rootAsteroid.height
-//    x: mainWindow.mouseModeRate + rootAsteroid.x
 
     onCollisionChanged:
     {
@@ -77,19 +76,6 @@ Image
         }
     }
 
-//    onXChanged:
-//    {
-//        if(created)
-//        {
-//            /* Should probably put an animation here so they don't just disappear */
-//            if(mainWindow.gameOver)
-//            {
-//                rootAsteroid.created = false;
-//                rootAsteroid.destroy()
-//            }
-//        }
-//    }
-
     Accelerometer
     {
         id: asteroidAccel
@@ -108,7 +94,7 @@ Image
             if(created)
             {
 
-                rootAsteroid.x += roll + mainWindow.mouseModeRate
+                rootAsteroid.x += roll
                 rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
                 /* Should probably put an animation here so they don't just disappear */
                 if(mainWindow.gameOver)
