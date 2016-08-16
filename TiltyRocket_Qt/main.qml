@@ -30,6 +30,7 @@ ApplicationWindow
     property alias rocketHeight: redRocket.height
     property alias rocketMargin: redRocket.rocketMargin
 
+   // property alias mouseModeRate: gameModeMouse.mouseRate
     onGameOverChanged:
     {
         if(!gameOver) /* Create more asteroids */
@@ -116,7 +117,7 @@ ApplicationWindow
         Image
         {
             anchors.fill: redRocket
-            source: "Images/resources/JunkRocket_1.png"
+            source: "images/resources/JunkRocket_1.png"
         }
 
         MouseArea
@@ -159,7 +160,7 @@ ApplicationWindow
 
     Text
     {
-        id: textBox1
+        id: currentScore
         color: "#431cf1"
         text: mainWindow.score;
     }
@@ -194,4 +195,21 @@ ApplicationWindow
             }
         }
     }
+
+
+//    MouseArea
+//    {
+//        id: gameModeMouse
+
+//        anchors.fill: parent
+//        hoverEnabled: true
+//        propagateComposedEvents: true
+
+//        property real mouseRate
+//        onPositionChanged:
+//        {
+//            mouseRate = (redRocket.centerX - gameModeMouse.mouseX) * 0.5;
+//            console.log(mouseRate);
+//        }
+//    }
 }
