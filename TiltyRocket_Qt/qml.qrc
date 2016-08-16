@@ -11,5 +11,6 @@
         <file>resources/Bluebubble.svg</file>
         <file>resources/JunkRocket_1.png</file>
         <file>resources/Wing.png</file>
+        <file>resources/title.jpg</file>
     </qresource>
 </RCC>

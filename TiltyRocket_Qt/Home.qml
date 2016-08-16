@@ -1,14 +1,12 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
-Item
+
+ApplicationWindow
 {
     id: home
-    anchors.fill: parent
-    // Add a simple animation to fade in the popup
-    // let the opacity go from 0 to 1 in 400ms
-    PropertyAnimation { target: home; property: "opacity";
-                                  duration: 400; from: 0; to: 1;
-                                  easing.type: Easing.InOutQuad ; running: true }
+    width: 720
+    height: 1280
+    visible: true
 
     // This rectange is the a overlay to partially show the parent through it
     // and clicking outside of the 'dialog' popup will do 'nothing'
@@ -24,71 +22,61 @@ Item
         {
             anchors.fill: parent
         }
-        Text
-        {
-            text: "Tilty Rocket!"
-            anchors.horizontalCenter: parent
-            anchors.top: parent
-            anchors.topMargin: 5
-        }
     }
 
-    // This rectangle is the actual popup
+    // This rectangle contains the menu
     Rectangle
     {
-        id: scoreBoardWindow
-        width: 100
-        height: 62
+        id: menuWindow
+        width: parent.width * 0.75
+        height: parent.height - 50
         radius: 10
         anchors.centerIn: parent
 
-        Text
+        Rectangle
         {
-            anchors.centerIn: parent
+            id: titleBox
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: 5
-            text: "Leaderboard"
-        }
-            Button
+            anchors.topMargin: 50
+
+            width: parent.width - 200
+            height: parent.height/8
+            Image
             {
-                id: retry
-                x: parent.width * 0.25
-                y: parent.height * 0.5
-                text: qsTr("Retry")
-                visible: mainWindow.gameOver ? true: false
-
-                onClicked:
-                {
-
-                    gameOver = false
-                    // destroy object is needed when you dynamically create it
-                    scoreBoardPopup.destroy()
-                }
+                anchors.fill:parent
+                source: "images/resources/title.jpg"
             }
+        }
+        Button
+        {
+            id: arcadeModeButton
 
-            Button {
-                id: exit
-                x: parent.width * 0.75
-                y: parent.height * 0.5
-                text: qsTr("Exit")
-                visible: mainWindow.gameOver ? true: false
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: titleBox.bottom
+            anchors.topMargin: arcadeModeButton.height
+            text: qsTr("Arcade Mode")
+            visible: true
 
-                onClicked:
-                {
-                    Qt.quit()
-                }
+            onClicked:
+            {
+
             }
+        }
 
-        // For demo I do not put any buttons, or other fancy stuff on the popup
-        // clicking the whole dialogWindow will dismiss it
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                // destroy object is needed when you dynamically create it
-                scoreBoardPopup.destroy()
+        Button
+        {
+            id: settingsButton
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: arcadeModeButton.bottom
+            anchors.topMargin: settingsButton.height
+            text: qsTr("Settings")
+            visible: true
+
+            onClicked:
+            {
+
             }
         }
     }
-
-
 }
