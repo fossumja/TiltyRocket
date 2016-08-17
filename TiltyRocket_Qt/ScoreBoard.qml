@@ -30,58 +30,80 @@ Item
     // This rectangle is the actual popup
     Rectangle
     {
-        id: scoreBoardWindow
-        width: 100
-        height: 62
+        id: scoreBoard
+        width: parent.width * 0.75
+        height: parent.height * 0.4
         radius: 10
         anchors.centerIn: parent
 
         Text
         {
-            anchors.centerIn: parent
+            id: leaderboardTitle
             anchors.top: parent.top
-            anchors.topMargin: 5
+            anchors.horizontalCenter: parent.horizontalCenter
             text: "Leaderboard"
-            Button
-            {
-                id: retry
-                x: parent.width * 0.25
-                y: parent.height * 0.5
-                text: qsTr("Retry")
-                visible: mainWindow.gameOver ? true: false
 
-                onClicked:
-                {
-                    gameOver = false
-                    // destroy object is needed when you dynamically create it
-                    scoreBoardPopup.destroy()
-                }
+        }
+        Text
+        {
+            id: score1
+            anchors.top: leaderboardTitle.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "PLayer One: " + 1
+
+        }
+        Text
+        {
+            id: score2
+            anchors.top: score1.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Player Two:" + 2
+        }
+        Text
+        {
+            id: score3
+            anchors.top: score2.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Player 3: " + 3
+        }
+
+        Button
+        {
+            id: retry
+            y: 21
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 5
+
+            anchors.left: parent.left
+            anchors.leftMargin: parent.width * 0.01
+
+            text: qsTr("Retry")
+
+            onClicked:
+            {
+                gameOver = false
+                // destroy object is needed when you dynamically create it
+                scoreBoardPopup.destroy()
             }
+        }
 
-            Button
+        Button
+        {
+            id: exit
+
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 5
+
+            anchors.right: parent.right
+            anchors.rightMargin: parent.width * 0.01
+            text: qsTr("Exit")
+
+
+            onClicked:
             {
-                id: exit
-                x: parent.width * 0.75
-                y: parent.height * 0.5
-                text: qsTr("Exit")
-                visible: mainWindow.gameOver ? true: false
-
-                onClicked:
-                {
-                    Qt.quit()
-                }
-            }
-
-            // For demo I do not put any buttons, or other fancy stuff on the popup
-            // clicking the whole dialogWindow will dismiss it
-            MouseArea
-            {
-                anchors.fill: parent
-                onClicked:
-                {
-                    // destroy object is needed when you dynamically create it
-                    scoreBoardPopup.destroy()
-                }
+                scoreBoardPopup.destroy()
+                mainWindow.destroy()
+                homeWindow.visible = true;
             }
         }
     }

@@ -6,12 +6,10 @@ import QtSensors 5.0
 import "itemCreation.js" as Creator
 import QtQuick.LocalStorage 2.0
 
-ApplicationWindow
+Item
 {
-    title: "Arcade Mode"
     id: mainWindow
-    width: 720
-    height: 1280
+    anchors.fill: parent
     visible: true
 
     property int activeAsteroids: 0
