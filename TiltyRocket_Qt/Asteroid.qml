@@ -35,6 +35,18 @@ Image
     y: -rootAsteroid.height
 //    x: mainWindow.mouseModeRate + rootAsteroid.x
 
+    onXChanged:
+    {
+        rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
+        /* Should probably put an animation here so they don't just disappear */
+    }
+
+    onYChanged:
+    {
+        rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
+        /* Should probably put an animation here so they don't just disappear */
+    }
+
     onCollisionChanged:
     {
         if(collision)
@@ -77,19 +89,6 @@ Image
         }
     }
 
-//    onXChanged:
-//    {
-//        if(created)
-//        {
-//            /* Should probably put an animation here so they don't just disappear */
-//            if(mainWindow.gameOver)
-//            {
-//                rootAsteroid.created = false;
-//                rootAsteroid.destroy()
-//            }
-//        }
-//    }
-
     Accelerometer
     {
         id: asteroidAccel
@@ -107,10 +106,7 @@ Image
 
             if(created)
             {
-
                 rootAsteroid.x += roll
-                rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
-                /* Should probably put an animation here so they don't just disappear */
                 if(mainWindow.gameOver)
                 {
                     rootAsteroid.created = false;

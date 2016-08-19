@@ -5,17 +5,22 @@ ApplicationWindow
 {
     id: home
     visible: true
-
-    x: 0
-    y: 0
+    width: 720
+    height: 1280
+    //x: 0
+    //y: 0
 
     property int highScoreOne: 1000
     Rectangle
     {
         id: homeWindow
         anchors.centerIn: parent
-        width: 720
-        height: 1280
+        anchors.fill: parent
+
+        anchors.rightMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
+        anchors.leftMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
+        //width: 720
+        //height: 1280
         visible: true
 
         // This rectange is the a overlay to partially show the parent through it
