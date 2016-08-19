@@ -108,7 +108,7 @@ Image
             if(created)
             {
 
-                rootAsteroid.x += roll + mainWindow.mouseModeRate
+                rootAsteroid.x += roll
                 rootAsteroid.collision = checkCollission(rootAsteroid.x, rootAsteroid.y)
                 /* Should probably put an animation here so they don't just disappear */
                 if(mainWindow.gameOver)

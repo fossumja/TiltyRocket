@@ -88,7 +88,7 @@ ApplicationWindow
         }
         /**** Debuging ****/
 
-        onRotationChanged: console.log(activeAsteroids)
+        //onRotationChanged: console.log(activeAsteroids)
         Accelerometer
         {
             id: rocketAccel
