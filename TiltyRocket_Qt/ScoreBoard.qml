@@ -46,25 +46,62 @@ Item
         }
         Text
         {
-            id: score1
+            id: playerOne
             anchors.top: leaderboardTitle.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "PLayer One: " + 1
+            anchors.right: parent.horizontalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignRight
 
+            text: "Player One:"
+            Text
+            {
+                id: scoreOne
+                anchors.left: parent.right
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignRight
+                width: 100
+
+                text: home.highScoreOne
+            }
         }
         Text
         {
-            id: score2
-            anchors.top: score1.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "Player Two:" + 2
+            id: playerTwo
+            anchors.top: playerOne.bottom
+            anchors.right: parent.horizontalCenter
+
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignRight
+
+            text: "Player Two:"
+            Text
+            {
+                id: scoreTwo
+                anchors.left: parent.right
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignRight
+                width: 100
+                text: " " + 3
+            }
         }
         Text
         {
-            id: score3
-            anchors.top: score2.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "Player 3: " + 3
+            id: playerThree
+            anchors.top: playerTwo.bottom
+            anchors.right: parent.horizontalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignRight
+
+            text: "Player Three:"
+            Text
+            {
+                id: scoreThree
+                anchors.left: parent.right
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignRight
+                width: 100
+                text: " " + 3
+            }
         }
 
         Button

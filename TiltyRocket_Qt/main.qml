@@ -102,7 +102,11 @@ Item
 
                 var roll = (calcRoll(rocketAccel.reading.x, rocketAccel.reading.y, rocketAccel.reading.z)* 0.2)
 
-                if(roll < 0)
+                if(Math.abs(roll) < 0.2) /*create a small dead band */
+                {
+                    redRocket.rotation = redRocket.rotation;
+                }
+                else if(roll < 0)
                 {
                     redRocket.rotation = redRocket.rotation < 45 ? redRocket.rotation - (roll ) : redRocket.rotation
                 }

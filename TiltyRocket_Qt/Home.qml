@@ -9,6 +9,7 @@ ApplicationWindow
     x: 0
     y: 0
 
+    property int highScoreOne: 1000
     Rectangle
     {
         id: homeWindow
