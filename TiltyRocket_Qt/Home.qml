@@ -1,3 +1,5 @@
+import TiltyRocket 1.0
+
 import QtQuick 2.0
 import QtQuick.Controls 1.4
 
@@ -115,6 +117,17 @@ ApplicationWindow
                 {
 
                 }
+            }
+            ScoreKeeper
+            {
+                id: theScoreKeeper
+                highScore: 20
+            }
+            Text
+            {
+                anchors.top: aboutButton.bottom
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr(theScoreKeeper.highScore.toString())
             }
         }
     }

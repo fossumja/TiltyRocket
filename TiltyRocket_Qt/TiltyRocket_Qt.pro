@@ -3,7 +3,8 @@ TEMPLATE = app
 QT += qml quick
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    scorekeeper.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,4 +22,5 @@ DISTFILES += \
 
 FORMS +=
 
-HEADERS +=
+HEADERS += \
+    scorekeeper.h

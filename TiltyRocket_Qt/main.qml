@@ -42,7 +42,7 @@ Item
             {
 
                 var i
-                for(i=0;i<startingAsteroids;i++)
+                for(i=0;i<mainWindow.startingAsteroids;i++)
                 {
                     Creator.startDrop();
                 }
@@ -84,8 +84,8 @@ Item
             Rectangle
             {
                 anchors.fill: redRocket
-                anchors.leftMargin: rocketMargin
-                anchors.rightMargin: rocketMargin
+                anchors.leftMargin: parent.rocketMargin
+                anchors.rightMargin: parent.rocketMargin
 
                 anchors.onFillChanged: anchors.fill = redRocket
                 border.width: 5
@@ -189,8 +189,9 @@ Item
 
         Button {
             id: blastOffButton
-            anchors.top: redRocket.top
-            anchors.left: redRocket.left
+            anchors.bottom: redRocket.top
+            anchors.bottomMargin: blastOffButton.height
+            anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Blast Off!")
             visible: true
 
@@ -198,7 +199,7 @@ Item
             {
                 var i = 0;
                 blastOffButton.visible = false
-                for(i=0;i<startingAsteroids;i++)
+                for(i=0;i<mainWindow.startingAsteroids;i++)
                 {
                     Creator.startDrop();
                 }
