@@ -3,14 +3,15 @@ import TiltyRocket 1.0
 import QtQuick 2.0
 import QtQuick.Controls 1.4
 
+import "content"
+import "databaseManager.js" as TestMode
+
 ApplicationWindow
 {
     id: home
     visible: true
     width: 720
     height: 1280
-    //x: 0
-    //y: 0
 
     property int highScoreOne: 1000
     Rectangle
@@ -21,8 +22,7 @@ ApplicationWindow
 
         anchors.rightMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
         anchors.leftMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
-        //width: 720
-        //height: 1280
+
         visible: true
 
         // This rectange is the a overlay to partially show the parent through it
@@ -115,20 +115,30 @@ ApplicationWindow
 
                 onClicked:
                 {
-
+//                    nameInputDialog.showWithInput("Name: ");
                 }
             }
-            ScoreKeeper
-            {
-                id: theScoreKeeper
-                highScore: 20
-            }
-            Text
-            {
-                anchors.top: aboutButton.bottom
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr(theScoreKeeper.highScore.toString())
-            }
-        }
-    }
-    }
+        } /*menuWindow*/
+        /*Testing */
+//        Dialog
+//        {
+//            id: nameInputDialog
+//            anchors.centerIn: parent
+//            z: 100
+
+//            onClosed:
+//            {
+//                TestMode.saveHighScore(nameInputDialog.inputText);
+//            }
+//        }
+//        Text
+//        {
+//            id: leaderboard
+//            anchors.top: aboutButton.bottom
+//            anchors.right: parent.horizontalCenter
+//            verticalAlignment: Text.AlignVCenter
+//            horizontalAlignment: Text.AlignRight
+//        }
+        /*Testing */
+    }/*homeWindow*/
+} /*home*/

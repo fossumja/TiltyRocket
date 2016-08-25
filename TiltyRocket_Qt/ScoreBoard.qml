@@ -1,6 +1,11 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
 
+import "content"
+import "databaseManager.js" as ScoreManager
+
+
+
 Item
 {
     id: scoreBoardPopup
@@ -8,11 +13,12 @@ Item
     // Add a simple animation to fade in the popup
     // let the opacity go from 0 to 1 in 400ms
     PropertyAnimation { target: scoreBoardPopup; property: "opacity";
-                                  duration: 400; from: 0; to: 1;
-                                  easing.type: Easing.InOutQuad ; running: true }
+        duration: 400; from: 0; to: 1;
+        easing.type: Easing.InOutQuad ; running: true }
 
     // This rectange is the a overlay to partially show the parent through it
     // and clicking outside of the 'dialog' popup will do 'nothing'
+
     Rectangle
     {
         anchors.fill: parent
@@ -42,68 +48,15 @@ Item
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Leaderboard"
-
         }
         Text
         {
-            id: playerOne
-            anchors.top: leaderboardTitle.bottom
+            id: leaderboard
+            anchors.top: aboutButton.bottom
             anchors.right: parent.horizontalCenter
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignRight
-
-            text: "Player One:"
-            Text
-            {
-                id: scoreOne
-                anchors.left: parent.right
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignRight
-                width: 100
-
-                text: home.highScoreOne
-            }
         }
-        Text
-        {
-            id: playerTwo
-            anchors.top: playerOne.bottom
-            anchors.right: parent.horizontalCenter
-
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignRight
-
-            text: "Player Two:"
-            Text
-            {
-                id: scoreTwo
-                anchors.left: parent.right
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignRight
-                width: 100
-                text: " " + 3
-            }
-        }
-        Text
-        {
-            id: playerThree
-            anchors.top: playerTwo.bottom
-            anchors.right: parent.horizontalCenter
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignRight
-
-            text: "Player Three:"
-            Text
-            {
-                id: scoreThree
-                anchors.left: parent.right
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignRight
-                width: 100
-                text: " " + 3
-            }
-        }
-
         Button
         {
             id: retry
@@ -142,6 +95,17 @@ Item
                 mainWindow.destroy()
                 homeWindow.visible = true;
             }
+        }
+    }
+    Dialog
+    {
+        id: nameInputDialog
+        anchors.centerIn: parent
+        z: 100
+
+        onClosed:
+        {
+            TestMode.saveHighScore(nameInputDialog.inputText);
         }
     }
 }

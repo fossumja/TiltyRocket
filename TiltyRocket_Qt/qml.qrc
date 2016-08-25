@@ -5,6 +5,8 @@
         <file>itemCreation.js</file>
         <file>ScoreBoard.qml</file>
         <file>Home.qml</file>
+        <file>databaseManager.js</file>
+        <file>content/Dialog.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>resources/ball.png</file>
