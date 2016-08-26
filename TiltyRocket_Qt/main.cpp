@@ -1,4 +1,3 @@
-#include <scorekeeper.h>
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -11,7 +10,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc,argv);
 
-    qmlRegisterType<ScoreKeeper>("TiltyRocket", 1, 0, "ScoreKeeper");
+    //qmlRegisterType<ScoreKeeper>("TiltyRocket", 1, 0, "ScoreKeeper");
 
     QQmlApplicationEngine engine(QUrl("qrc:/Home.qml"));
     //qDebug() << "Default path >> "+engine.offlineStoragePath();
