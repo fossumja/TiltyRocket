@@ -3,12 +3,7 @@ import QtQuick.Controls 1.0
 import QtQuick.LocalStorage 2.0
 import QtQuick.Window 2.2
 import QtSensors 5.0
-
-import "content"
-
-import "itemCreation.js" as Creator
-import "TiltyRocket.js" as TiltyRocket
-import "databaseManager.js" as ScoreManager
+import "../itemCreation.js" as Creator
 
 Rectangle
 {
@@ -36,8 +31,6 @@ Rectangle
     property alias rocketHeight: redRocket.height
     property alias rocketMargin: redRocket.rocketMargin
 
-    property alias leaderBoard: scoreBoard.leaderBoard
-
     // property alias mouseModeRate: gameModeMouse.mouseRate
     onGameOverChanged:
     {
@@ -52,8 +45,8 @@ Rectangle
         }
         else /* Display the score board */
         {
-            scoreBoard.visible = true;
-            TiltyRocket.displayScoreBoard();
+            Qt.createComponent("ScoreBoard.qml").createObject(mainWindow, {});
+
         }
     }
 
@@ -184,7 +177,7 @@ Rectangle
         onTriggered:
         {
             if(!mainWindow.gameOver && !blastOffButton.visible) mainWindow.score = mainWindow.score + (1);
-            else mainWindow.score = mainWindow.score
+            else mainWindow.score = 0
         }
     }
 
@@ -206,23 +199,7 @@ Rectangle
             }
         }
     }
-    ScoreBoard
-    {
-        id:scoreBoard
-        visible: false
 
-        Dialog
-        {
-            id: nameInputDialog
-            anchors.centerIn: scoreBoard
-            z: 100
-
-            onClosed:
-            {
-                ScoreManager.saveHighScore(nameInputDialog.inputText);
-            }
-        }
-    }
 
     //    MouseArea
     //    {

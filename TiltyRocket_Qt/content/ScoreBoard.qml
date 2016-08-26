@@ -1,15 +1,12 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
 
-import "content"
-import "databaseManager.js" as ScoreManager
-import "TiltyRocket.js" as TiltyRocket
-
-
 Item
 {
     id: scoreBoardPopup
     anchors.fill: parent
+
+    property alias leaderBoard: leaderboard.text
     // Add a simple animation to fade in the popup
     // let the opacity go from 0 to 1 in 400ms
     PropertyAnimation { target: scoreBoardPopup; property: "opacity";
@@ -36,7 +33,7 @@ Item
     // This rectangle is the actual popup
     Rectangle
     {
-        id: scoreBoard
+        id: leaderBoardContainer
         width: parent.width * 0.75
         height: parent.height * 0.4
         radius: 10
@@ -72,8 +69,8 @@ Item
             onClicked:
             {
                 gameOver = false
-                // destroy object is needed when you dynamically create it
-                scoreBoardPopup.destroy()
+                score = 0
+                scoreBoardPopup.visible = false
             }
         }
 
@@ -95,17 +92,6 @@ Item
                 mainWindow.destroy()
                 homeWindow.visible = true;
             }
-        }
-    }
-    Dialog
-    {
-        id: nameInputDialog
-        anchors.centerIn: scoreBoard
-        z: 100
-
-        onClosed:
-        {
-            TestMode.saveHighScore(nameInputDialog.inputText);
         }
     }
 }

@@ -3,10 +3,13 @@
         <file>main.qml</file>
         <file>Asteroid.qml</file>
         <file>itemCreation.js</file>
-        <file>ScoreBoard.qml</file>
         <file>Home.qml</file>
         <file>databaseManager.js</file>
         <file>content/Dialog.qml</file>
+        <file>TiltyRocket.qml</file>
+        <file>TiltyRocket.js</file>
+        <file>content/ArcadeMode.qml</file>
+        <file>content/ScoreBoard.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>resources/ball.png</file>
