@@ -5,7 +5,7 @@ var startPos;
 
 function startDrop()
 {
-    startPos = Math.random() * mainWindow.width;
+    startPos = Math.random() * arcadeWindow.width;
     loadComponent();
     checkGameOver();
 }
@@ -28,7 +28,7 @@ function loadComponent() {
 
 function createItem() {
     if (itemComponent.status === Component.Ready && draggedItem == null) {
-        draggedItem = itemComponent.createObject(mainWindow, {"image": "images/resources/ball.png", "x": startPos, "y": -60, "z": 3});
+        draggedItem = itemComponent.createObject(arcadeWindow, {"image": "images/resources/ball.png", "x": startPos, "y": -60, "z": 3});
     }
     else if (itemComponent.status === Component.Error)
     {
@@ -44,7 +44,7 @@ function checkGameOver()
     if (draggedItem == null)
         return;
 
-    if (mainWindow.gameOver) {
+    if (arcadeWindow.gameOver) {
         draggedItem.created = true;
         //draggedItem.destroy();
         draggedItem = null;

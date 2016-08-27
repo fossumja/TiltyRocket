@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
 
 Item
 {
@@ -62,9 +63,23 @@ Item
             anchors.bottomMargin: 5
 
             anchors.left: parent.left
-            anchors.leftMargin: parent.width * 0.01
+            anchors.leftMargin: parent.width * 0.02
 
             text: qsTr("Retry")
+
+            style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: menuWindow.buttonWidth*.75
+                        implicitHeight: menuWindow.buttonHeight*.75
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+            }
 
             onClicked:
             {
@@ -82,14 +97,27 @@ Item
             anchors.bottomMargin: 5
 
             anchors.right: parent.right
-            anchors.rightMargin: parent.width * 0.01
+            anchors.rightMargin: parent.width * 0.02
             text: qsTr("Exit")
 
+            style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: menuWindow.buttonWidth*.75
+                        implicitHeight: menuWindow.buttonHeight*.75
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+            }
 
             onClicked:
             {
                 scoreBoardPopup.destroy()
-                mainWindow.destroy()
+                arcadeWindow.destroy()
                 homeWindow.visible = true;
             }
         }

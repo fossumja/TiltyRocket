@@ -20,6 +20,7 @@
 <item>Qt5Quick</item>
 <item>Qt5QuickParticles</item>
 <item>Qt5Sensors</item>
+<item>Qt5Sql</item>
 
      </array>
 
@@ -50,12 +51,14 @@
 <item>libqml_QtQuick_Controls_libqtquickcontrolsplugin.so:qml/QtQuick/Controls/libqtquickcontrolsplugin.so</item>
 <item>libqml_QtQuick_Controls_Styles_Android_libqtquickcontrolsandroidstyleplugin.so:qml/QtQuick/Controls/Styles/Android/libqtquickcontrolsandroidstyleplugin.so</item>
 <item>libqml_QtQuick_Controls_Styles_Flat_libqtquickextrasflatplugin.so:qml/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so</item>
-<item>libqml_QtQuick_Window.2_libwindowplugin.so:qml/QtQuick/Window.2/libwindowplugin.so</item>
 <item>libqml_QtSensors_libdeclarative_sensors.so:qml/QtSensors/libdeclarative_sensors.so</item>
 <item>libplugins_sensors_libqtsensors_android.so:plugins/sensors/libqtsensors_android.so</item>
 <item>libplugins_sensors_libqtsensors_generic.so:plugins/sensors/libqtsensors_generic.so</item>
 <item>libplugins_sensorgestures_libqtsensorgestures_plugin.so:plugins/sensorgestures/libqtsensorgestures_plugin.so</item>
 <item>libplugins_sensorgestures_libqtsensorgestures_shakeplugin.so:plugins/sensorgestures/libqtsensorgestures_shakeplugin.so</item>
+<item>libqml_QtQuick_Window.2_libwindowplugin.so:qml/QtQuick/Window.2/libwindowplugin.so</item>
+<item>libqml_QtQuick_LocalStorage_libqmllocalstorageplugin.so:qml/QtQuick/LocalStorage/libqmllocalstorageplugin.so</item>
+<item>libplugins_sqldrivers_libqsqlite.so:plugins/sqldrivers/libqsqlite.so</item>
 <item>libqml_QtQuick_Layouts_libqquicklayoutsplugin.so:qml/QtQuick/Layouts/libqquicklayoutsplugin.so</item>
 <item>libqml_QtQml_Models.2_libmodelsplugin.so:qml/QtQml/Models.2/libmodelsplugin.so</item>
 <item>libqml_QtQml_StateMachine_libqtqmlstatemachine.so:qml/QtQml/StateMachine/libqtqmlstatemachine.so</item>
@@ -241,10 +244,12 @@
 <item>--Added-by-androiddeployqt--/qml/QtQuick/Controls/ToolBar.qml:qml/QtQuick/Controls/ToolBar.qml</item>
 <item>--Added-by-androiddeployqt--/qml/QtQuick/Controls/ToolButton.qml:qml/QtQuick/Controls/ToolButton.qml</item>
 <item>--Added-by-androiddeployqt--/qml/QtQuick/Controls/TreeView.qml:qml/QtQuick/Controls/TreeView.qml</item>
-<item>--Added-by-androiddeployqt--/qml/QtQuick/Window.2/plugins.qmltypes:qml/QtQuick/Window.2/plugins.qmltypes</item>
-<item>--Added-by-androiddeployqt--/qml/QtQuick/Window.2/qmldir:qml/QtQuick/Window.2/qmldir</item>
 <item>--Added-by-androiddeployqt--/qml/QtSensors/plugins.qmltypes:qml/QtSensors/plugins.qmltypes</item>
 <item>--Added-by-androiddeployqt--/qml/QtSensors/qmldir:qml/QtSensors/qmldir</item>
+<item>--Added-by-androiddeployqt--/qml/QtQuick/Window.2/plugins.qmltypes:qml/QtQuick/Window.2/plugins.qmltypes</item>
+<item>--Added-by-androiddeployqt--/qml/QtQuick/Window.2/qmldir:qml/QtQuick/Window.2/qmldir</item>
+<item>--Added-by-androiddeployqt--/qml/QtQuick/LocalStorage/plugins.qmltypes:qml/QtQuick/LocalStorage/plugins.qmltypes</item>
+<item>--Added-by-androiddeployqt--/qml/QtQuick/LocalStorage/qmldir:qml/QtQuick/LocalStorage/qmldir</item>
 <item>--Added-by-androiddeployqt--/qml/QtQuick/Layouts/plugins.qmltypes:qml/QtQuick/Layouts/plugins.qmltypes</item>
 <item>--Added-by-androiddeployqt--/qml/QtQuick/Layouts/qmldir:qml/QtQuick/Layouts/qmldir</item>
 <item>--Added-by-androiddeployqt--/qml/QtQml/Models.2/plugins.qmltypes:qml/QtQml/Models.2/plugins.qmltypes</item>

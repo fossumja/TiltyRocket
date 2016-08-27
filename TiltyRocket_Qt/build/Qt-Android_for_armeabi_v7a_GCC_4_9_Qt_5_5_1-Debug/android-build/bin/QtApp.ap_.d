@@ -73,6 +73,7 @@ C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Controls \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Extras \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Layouts \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\LocalStorage \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Window.2 \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Controls\ApplicationWindow.qml \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Controls\BusyIndicator.qml \
@@ -290,6 +291,8 @@ C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Extras\designer\images\tumbler-icon16.png \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Layouts\plugins.qmltypes \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Layouts\qmldir \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\LocalStorage\plugins.qmltypes \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\LocalStorage\qmldir \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Window.2\plugins.qmltypes \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick\Window.2\qmldir \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\assets\--Added-by-androiddeployqt--\qml\QtQuick.2\plugins.qmltypes \

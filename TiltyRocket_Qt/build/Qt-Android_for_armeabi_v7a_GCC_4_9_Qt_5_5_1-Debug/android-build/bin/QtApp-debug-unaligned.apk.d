@@ -34,6 +34,7 @@ C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libplugins_sensorgestures_libqtsensorgestures_shakeplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libplugins_sensors_libqtsensors_android.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libplugins_sensors_libqtsensors_generic.so \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libplugins_sqldrivers_libqsqlite.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQml_Models.2_libmodelsplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQml_StateMachine_libqtqmlstatemachine.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick.2_libqtquick2plugin.so \
@@ -42,6 +43,7 @@ C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick_Controls_Styles_Flat_libqtquickextrasflatplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick_Extras_libqtquickextrasplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick_Layouts_libqquicklayoutsplugin.so \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick_LocalStorage_libqmllocalstorageplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtQuick_Window.2_libwindowplugin.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libqml_QtSensors_libdeclarative_sensors.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libQt5Core.so \
@@ -51,4 +53,5 @@ C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libQt5Quick.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libQt5QuickParticles.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libQt5Sensors.so \
+C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libQt5Sql.so \
 C:\Users\Joshua\Documents\GitHub\TiltyRocket\TiltyRocket_Qt\build\Qt-Android_for_armeabi_v7a_GCC_4_9_Qt_5_5_1-Debug\android-build\libs\armeabi-v7a\libTiltyRocket_Qt.so \

@@ -7,8 +7,8 @@ Image
 {
     id: rootAsteroid
     source: "images/resources/ball.png"
-    width: mainWindow.width/20
-    height: mainWindow.width/20
+    width: arcadeWindow.width/20
+    height: arcadeWindow.width/20
     smooth: true
     property string componentFile: "Asteroid.qml"
     property bool created: false
@@ -28,12 +28,12 @@ Image
 
     function checkCollission(x,y)
     {
-        return (   ((x + width > (mainWindow.rocketX   + mainWindow.rocketMargin  )) && (x < (mainWindow.rocketX + mainWindow.rocketWidth    - mainWindow.rocketMargin  )))
-                && ((y > (mainWindow.rocketY /*+ mainWindow.rocketMargin*/)) && (y < (mainWindow.rocketY + mainWindow.rocketHeight /*- mainWindow.rocketMargin*/))))
+        return (   ((x + width > (arcadeWindow.rocketX   + arcadeWindow.rocketMargin  )) && (x < (arcadeWindow.rocketX + arcadeWindow.rocketWidth    - arcadeWindow.rocketMargin  )))
+                && ((y > (arcadeWindow.rocketY /*+ arcadeWindow.rocketMargin*/)) && (y < (arcadeWindow.rocketY + arcadeWindow.rocketHeight /*- arcadeWindow.rocketMargin*/))))
     }
 
     y: -rootAsteroid.height
-//    x: mainWindow.mouseModeRate + rootAsteroid.x
+//    x: arcadeWindow.mouseModeRate + rootAsteroid.x
 
     onXChanged:
     {
@@ -51,8 +51,8 @@ Image
     {
         if(collision)
         {
-            if(!mainWindow.debugMode)
-            mainWindow.gameOver = true;
+            if(!arcadeWindow.debugMode)
+            arcadeWindow.gameOver = true;
         }
     }
 
@@ -61,14 +61,14 @@ Image
         if (created)
         {
             rootAsteroid.z = 1;    // above the sky but below the ground layer
-            mainWindow.activeAsteroids++;
+            arcadeWindow.activeAsteroids++;
             // once item is created, start moving offscreen
-            dropYAnim.duration = 5000; //(mainWindow.height) * 16;
+            dropYAnim.duration = 5000; //(arcadeWindow.height) * 16;
             dropAnim.running = true;
         }
         else
         {
-            mainWindow.activeAsteroids--;
+            arcadeWindow.activeAsteroids--;
         }
     }
 
@@ -81,7 +81,7 @@ Image
         NumberAnimation
         {
             id: dropYAnim
-            to: (mainWindow.height + rootAsteroid.height * 2)
+            to: (arcadeWindow.height + rootAsteroid.height * 2)
         }
         ScriptAction
         {
@@ -107,7 +107,7 @@ Image
             if(created)
             {
                 rootAsteroid.x += roll
-                if(mainWindow.gameOver)
+                if(arcadeWindow.gameOver)
                 {
                     rootAsteroid.created = false;
                     rootAsteroid.destroy()

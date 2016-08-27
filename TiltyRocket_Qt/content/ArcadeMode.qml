@@ -1,13 +1,22 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.0
+import QtQuick.Controls.Styles 1.4
 import QtQuick.LocalStorage 2.0
 import QtQuick.Window 2.2
 import QtSensors 5.0
+
+import "../content"
+//import "Asteroid.qml"
+//import "Dialog.qml"
+//import "ScoreBoard.qml"
+
 import "../itemCreation.js" as Creator
+import "../TiltyRocket.js" as TiltyRocket
+import "../databaseManager.js" as ScoreManager
 
 Rectangle
 {
-    id: mainWindow
+    id: arcadeWindow
     anchors.centerIn: parent
     anchors.fill: parent
 
@@ -31,22 +40,26 @@ Rectangle
     property alias rocketHeight: redRocket.height
     property alias rocketMargin: redRocket.rocketMargin
 
+    property alias leaderBoard: scoreBoard.leaderBoard
+
     // property alias mouseModeRate: gameModeMouse.mouseRate
     onGameOverChanged:
     {
         if(!gameOver) /* Create more asteroids */
         {
+            console.log("Creating Asteroid")
 
             var i
-            for(i=0;i<mainWindow.startingAsteroids;i++)
+            for(i=0;i<arcadeWindow.startingAsteroids;i++)
             {
                 Creator.startDrop();
             }
         }
         else /* Display the score board */
         {
-            Qt.createComponent("ScoreBoard.qml").createObject(mainWindow, {});
-
+            console.log("Game Over: Rocket Asteroid Collision")
+            scoreBoard.visible = true;
+            TiltyRocket.displayScoreBoard();
         }
     }
 
@@ -66,23 +79,23 @@ Rectangle
     Rectangle
     {
         id: redRocket
-        width: mainWindow.width/6
+        width: arcadeWindow.width/5
         height: redRocket.width * 2
         smooth: true
 
-        property real centerX: mainWindow.width / 2
-        property real centerY: mainWindow.height / 2
+        property real centerX: arcadeWindow.width / 2
+        property real centerY: arcadeWindow.height / 2
         property real redRocketCenter: redRocket.width / 2
         property real rocketMargin: redRocket.width /3
         x: centerX - redRocketCenter
-        y: mainWindow.height - (redRocket.height + redRocket.width/4)
+        y: arcadeWindow.height - (redRocket.height + redRocket.width/4)
 
         /**** Debuging ****/
         Rectangle
         {
             anchors.fill: redRocket
-            anchors.leftMargin: parent.rocketMargin
-            anchors.rightMargin: parent.rocketMargin
+            anchors.leftMargin: parent.rocketMargin-35
+            anchors.rightMargin: parent.rocketMargin-35
 
             anchors.onFillChanged: anchors.fill = redRocket
             border.width: 5
@@ -92,7 +105,7 @@ Rectangle
             {
                 anchors.fill: parent
 
-                onClicked: mainWindow.gameOver = true
+                onClicked: arcadeWindow.gameOver = true
             }
         }
         /**** Debuging ****/
@@ -127,10 +140,10 @@ Rectangle
                 }
             }
         }
-        Image
+        AnimatedImage
         {
             anchors.fill: redRocket
-            source: "images/resources/JunkRocket_1.png"
+            source: "../images/resources/JunkRocket.gif"
         }
 
         Behavior on y
@@ -165,7 +178,7 @@ Rectangle
     {
         id: currentScore
         color: "#431cf1"
-        text: mainWindow.score;
+        text: arcadeWindow.score;
     }
 
     Timer
@@ -176,8 +189,8 @@ Rectangle
         repeat: true;
         onTriggered:
         {
-            if(!mainWindow.gameOver && !blastOffButton.visible) mainWindow.score = mainWindow.score + (1);
-            else mainWindow.score = 0
+            if(!arcadeWindow.gameOver && !blastOffButton.visible) arcadeWindow.score = arcadeWindow.score + (1);
+            else arcadeWindow.score = arcadeWindow.score
         }
     }
 
@@ -188,18 +201,47 @@ Rectangle
         anchors.horizontalCenter: parent.horizontalCenter
         text: qsTr("Blast Off!")
         visible: true
+        style: ButtonStyle {
+                background: Rectangle {
+                    implicitWidth: menuWindow.buttonWidth
+                    implicitHeight: menuWindow.buttonHeight
+                    border.width: control.activeFocus ? 2 : 1
+                    border.color: "#888"
+                    radius: 4
+                    gradient: Gradient {
+                        GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                        GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                    }
+                }
+        }
 
         onClicked:
         {
             var i = 0;
             blastOffButton.visible = false
-            for(i=0;i<mainWindow.startingAsteroids;i++)
+            for(i=0;i<arcadeWindow.startingAsteroids;i++)
             {
                 Creator.startDrop();
             }
         }
     }
+    ScoreBoard
+    {
+        id:scoreBoard
+        visible: false
 
+        Dialog
+        {
+            id: nameInputDialog
+            anchors.centerIn: scoreBoard
+            z: 100
+
+            onClosed:
+            {
+                ScoreManager.saveHighScore(nameInputDialog.inputText);
+            }
+        }
+    }
 
     //    MouseArea
     //    {
