@@ -3,7 +3,12 @@ import QtQuick.Controls 1.0
 import QtQuick.LocalStorage 2.0
 import QtQuick.Window 2.2
 import QtSensors 5.0
+
+import "../content"
+
 import "../itemCreation.js" as Creator
+import "../TiltyRocket.js" as TiltyRocket
+import "../databaseManager.js" as ScoreManager
 
 Rectangle
 {
@@ -31,6 +36,12 @@ Rectangle
     property alias rocketHeight: redRocket.height
     property alias rocketMargin: redRocket.rocketMargin
 
+    property alias scoreText  : scoreBoard.scoreText
+    property alias playerText : scoreBoard.playerText
+//    property alias leaderBoard: scoreBoard.leaderBoard
+    property alias highNames  : scoreBoard.highNames
+    property alias highScores : scoreBoard.highScores
+
     // property alias mouseModeRate: gameModeMouse.mouseRate
     onGameOverChanged:
     {
@@ -45,8 +56,9 @@ Rectangle
         }
         else /* Display the score board */
         {
-            Qt.createComponent("ScoreBoard.qml").createObject(mainWindow, {});
-
+            ScoreManager.getHighScores();
+            scoreBoard.visible = true;
+            TiltyRocket.promptPlayerName();
         }
     }
 
@@ -130,7 +142,7 @@ Rectangle
         Image
         {
             anchors.fill: redRocket
-            source: "images/resources/JunkRocket_1.png"
+            source: "../images/resources/JunkRocket_1.png"
         }
 
         Behavior on y
@@ -177,7 +189,7 @@ Rectangle
         onTriggered:
         {
             if(!mainWindow.gameOver && !blastOffButton.visible) mainWindow.score = mainWindow.score + (1);
-            else mainWindow.score = 0
+            else mainWindow.score = mainWindow.score
         }
     }
 
@@ -199,7 +211,23 @@ Rectangle
             }
         }
     }
+    ScoreBoard
+    {
+        id:scoreBoard
+        visible: false
 
+        Dialog
+        {
+            id: nameInputDialog
+            anchors.centerIn: scoreBoard
+            z: 100
+
+            onClosed:
+            {
+                ScoreManager.saveHighScore(nameInputDialog.inputText);
+            }
+        }
+    }
 
     //    MouseArea
     //    {

@@ -6,7 +6,12 @@ Item
     id: scoreBoardPopup
     anchors.fill: parent
 
-    property alias leaderBoard: leaderboard.text
+    property var highNames : ["","","","","","","","","",""]
+    property var highScores: [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    property alias scoreText: scoreCol.text
+    property alias playerText: playerCol.text
+//    property alias leaderBoard: leaderboard.text
     // Add a simple animation to fade in the popup
     // let the opacity go from 0 to 1 in 400ms
     PropertyAnimation { target: scoreBoardPopup; property: "opacity";
@@ -46,14 +51,59 @@ Item
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Leaderboard"
         }
-        Text
+//        Text
+//        {
+//            id: leaderboard
+//            anchors.top: leaderBoardTitle.bottom
+//            anchors.right: parent.horizontalCenter
+//            verticalAlignment: Text.AlignVCenter
+//            horizontalAlignment: Text.AlignRight
+//        }
+        Rectangle
         {
-            id: leaderboard
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: leaderBoardTitle.bottom
-            anchors.right: parent.horizontalCenter
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignRight
+
+            width: parent.width * 0.6
+
+            border.color: "black"
+
+            Text
+            {
+                id: playerCol
+                horizontalAlignment: Text.AlignLeft
+                anchors.left: parent.left
+                anchors.top: parent.top
+                text: " 1. " + highNames[ 0] + "\n" +
+                      " 2. " + highNames[ 1] + "\n" +
+                      " 3. " + highNames[ 2] + "\n" +
+                      " 4. " + highNames[ 3] + "\n" +
+                      " 5. " + highNames[ 4] + "\n" +
+                      " 6. " + highNames[ 5] + "\n" +
+                      " 7. " + highNames[ 6] + "\n" +
+                      " 8. " + highNames[ 7] + "\n" +
+                      " 9. " + highNames[ 8] + "\n" +
+                      "10. " + highNames[ 9] + "\n"
+            }
+            Text
+            {
+                id: scoreCol
+                horizontalAlignment: Text.AlignRight
+                anchors.right: parent.right
+                anchors.top: parent.top
+                text: highScores[ 0] + "\n" +
+                      highScores[ 1] + "\n" +
+                      highScores[ 2] + "\n" +
+                      highScores[ 3] + "\n" +
+                      highScores[ 4] + "\n" +
+                      highScores[ 5] + "\n" +
+                      highScores[ 6] + "\n" +
+                      highScores[ 7] + "\n" +
+                      highScores[ 8] + "\n" +
+                      highScores[ 9] + "\n"
+            }
         }
+
         Button
         {
             id: retry

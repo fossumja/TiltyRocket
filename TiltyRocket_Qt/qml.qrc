@@ -1,9 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
         <file>Asteroid.qml</file>
         <file>itemCreation.js</file>
-        <file>Home.qml</file>
         <file>databaseManager.js</file>
         <file>content/Dialog.qml</file>
         <file>TiltyRocket.qml</file>

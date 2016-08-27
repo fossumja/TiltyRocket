@@ -1,6 +1,6 @@
 
 .import QtQuick 2.0 as Quick
 
-function displayScoreBoard() {
+function promptPlayerName() {
     nameInputDialog.showWithInput("Name: ");
 }

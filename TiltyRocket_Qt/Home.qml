@@ -2,8 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 1.4
 
 import "content"
-import "databaseManager.js" as TestMode
-
+import "databaseManager.js" as TestManager
 ApplicationWindow
 {
     id: home
@@ -11,15 +10,23 @@ ApplicationWindow
     width: 720
     height: 1280
 
-    property int highScoreOne: 1000
+//    property int highScoreOne: 1000
+
+//    property var highNames : ["","","","","","","","","",""]
+//    property var highScores: [ 200, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+//    property alias scoreText: scoreCol.text
+//    property int score : 100
+//    property alias aboutBottom: aboutButton.bottom
+
     Rectangle
     {
         id: homeWindow
         anchors.centerIn: parent
         anchors.fill: parent
 
-        anchors.rightMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
-        anchors.leftMargin: if(parent.width > 0.6 * parent.height){(parent.width - 0.6 * parent.height)/2} else {0}
+        property real aspectRatio: 3/4
+        anchors.rightMargin: if(parent.width > aspectRatio * parent.height){(parent.width - aspectRatio * parent.height)/2} else {0}
+        anchors.leftMargin: if(parent.width > aspectRatio * parent.height){(parent.width - aspectRatio * parent.height)/2} else {0}
 
         visible: true
 
@@ -79,7 +86,7 @@ ApplicationWindow
 
                 onClicked:
                 {
-                    Qt.createComponent("main.qml").createObject(home, {});
+                    Qt.createComponent("content/ArcadeMode.qml").createObject(home, {});
                     homeWindow.visible = false;
                 }
             }
@@ -113,11 +120,62 @@ ApplicationWindow
 
                 onClicked:
                 {
-//                    nameInputDialog.showWithInput("Name: ");
+                    TestManager.saveHighScore("Max");
+                    highScores[1] = 10;
                 }
             }
         } /*menuWindow*/
-        /*Testing */
+    }/*homeWindow*/
+} /*home*/
+
+/*Testing */
+//Rectangle
+//{
+//    id: leaderBoard
+//    anchors.verticalCenter: parent.verticalCenter
+//    anchors.top: aboutBottom
+//    width: parent.width
+
+//    Text
+//    {
+//        id: playerCol
+//        horizontalAlignment: Text.AlignLeft
+//        anchors.left: parent.left
+//        anchors.top: parent.top
+//        /*for some reason, I cannot set this or any monospaced font*/
+//        //font.family: "FixedSys"
+//        text: " 1. " + highNames[ 0] + "\n" +
+//              " 2. " + highNames[ 1] + "\n" +
+//              " 3. " + highNames[ 2] + "\n" +
+//              " 4. " + highNames[ 3] + "\n" +
+//              " 5. " + highNames[ 4] + "\n" +
+//              " 6. " + highNames[ 5] + "\n" +
+//              " 7. " + highNames[ 6] + "\n" +
+//              " 8. " + highNames[ 7] + "\n" +
+//              " 9. " + highNames[ 8] + "\n" +
+//              "10. " + highNames[ 9] + "\n"
+//    }
+//    Text
+//    {
+//        id: scoreCol
+//        horizontalAlignment: Text.AlignRight
+//        anchors.right: parent.right
+//        anchors.top: parent.top
+//        /*for some reason, I cannot set this or any monospaced font*/
+//        //font.family: "FixedSys"
+////            text: highScores[ 0] + "\n" +
+////                  highScores[ 1] + "\n" +
+////                  highScores[ 2] + "\n" +
+////                  highScores[ 3] + "\n" +
+////                  highScores[ 4] + "\n" +
+////                  highScores[ 5] + "\n" +
+////                  highScores[ 6] + "\n" +
+////                  highScores[ 7] + "\n" +
+////                  highScores[ 8] + "\n" +
+////                  highScores[ 9] + "\n"
+//    }
+//}
+
 //        Dialog
 //        {
 //            id: nameInputDialog
@@ -137,6 +195,4 @@ ApplicationWindow
 //            verticalAlignment: Text.AlignVCenter
 //            horizontalAlignment: Text.AlignRight
 //        }
-        /*Testing */
-    }/*homeWindow*/
-} /*home*/
+/*Testing */

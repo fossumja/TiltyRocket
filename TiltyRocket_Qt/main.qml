@@ -52,8 +52,9 @@ Rectangle
         }
         else /* Display the score board */
         {
+            ScoreManager.getHighScores();
             scoreBoard.visible = true;
-            TiltyRocket.displayScoreBoard();
+            TiltyRocket.promptPlayerName();
         }
     }
 
