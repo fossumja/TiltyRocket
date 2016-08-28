@@ -25,7 +25,7 @@ Rectangle
     visible: true
 
     property int activeAsteroids: 0
-    property int startingAsteroids: 10
+    property int startingAsteroids: 1
     property int totalAsteroids: startingAsteroids + additionalAsteroids
 
     property int  score: 0
@@ -76,6 +76,29 @@ Rectangle
         //console.log("Active Asteroids: " + activeAsteroids +"    Total Asteroids: "+totalAsteroids + additionalAsteroids)
     }
 
+
+    /*arrow key inputs for pc testing
+    FocusScope {
+
+        id: scope
+
+        //FocusScope needs to bind to visual properties of the children
+        property alias color: rectangle.color
+        x: rectangle.x; y: rectangle.y
+        width: rectangle.width; height: rectangle.height
+
+        Rectangle {
+            id: rectangle
+            anchors.centerIn: parent
+            color: "lightsteelblue"; width: 175; height: 25; radius: 10; antialiasing: true
+            Text { id: label; anchors.centerIn: parent }
+            focus: true
+            Keys.onLeftPressed:{  redRocket.rotation = redRocket.rotation -10; redRocket.x = redRocket.x -10; console.log("Key: Left Pressed")}
+            Keys.onRightPressed:{ redRocket.rotation = redRocket.rotation +10; redRocket.x = redRocket.x +10; console.log("Key: Left Pressed")}
+        }
+        MouseArea { anchors.fill: parent; onClicked: { scope.focus = true } }
+    }*/
+
     Rectangle
     {
         id: redRocket
@@ -89,6 +112,7 @@ Rectangle
         property real rocketMargin: redRocket.width /3
         x: centerX - redRocketCenter
         y: arcadeWindow.height - (redRocket.height + redRocket.width/4)
+        transform: Rotation { origin.x: redRocket.width/2; origin.y: 200; axis { x: 0; y: 0; z: 1 } angle: contMouse.mouseAngleCalc }
 
         /**** Debuging ****/
         Rectangle
@@ -108,8 +132,8 @@ Rectangle
                 onClicked: arcadeWindow.gameOver = true
             }
         }
-        /**** Debuging ****/
 
+        /**** Debugging ****/
         //onRotationChanged: console.log(activeAsteroids)
         Accelerometer
         {
@@ -144,6 +168,15 @@ Rectangle
         {
             anchors.fill: redRocket
             source: "../images/resources/JunkRocket.gif"
+        }
+
+        Behavior on rotation
+        {
+            SmoothedAnimation
+            {
+                easing.type: Easing.Linear
+                duration: 100
+            }
         }
 
         Behavior on y
@@ -218,7 +251,8 @@ Rectangle
         onClicked:
         {
             var i = 0;
-            blastOffButton.visible = false
+            blastOffButton.visible = false;
+            contMouse.enabled = true;
             for(i=0;i<arcadeWindow.startingAsteroids;i++)
             {
                 Creator.startDrop();
@@ -243,19 +277,29 @@ Rectangle
         }
     }
 
-    //    MouseArea
-    //    {
-    //        id: gameModeMouse
+    MouseArea
+    {
+        id: contMouse
+        enabled: false
+        anchors.fill: parent
+        hoverEnabled: true
+        propagateComposedEvents: true
 
-    //        anchors.fill: parent
-    //        hoverEnabled: true
-    //        propagateComposedEvents: true
+        property real mouseVelXCalc: 0
+        property real mouseAngleCalc: 0
 
-    //        property real mouseRate
-    //        onPositionChanged:
-    //        {
-    //            mouseRate = (redRocket.centerX - gameModeMouse.mouseX) * 0.5;
-    //            console.log(mouseRate);
-    //        }
-    //    }
+        onPositionChanged:
+        {
+            mouseVelXCalc = ((contMouse.mouseX - redRocket.centerX)/redRocket.centerX);
+            mouseAngleCalc = (45*mouseVelXCalc);
+
+            //DEBUGGING
+            //console.log(redRocket.centerX + ", " + contMouse.mouseX + ", " + contMouse.mouseVelXCalc + ", " + contMouse.mouseAngleCalc)
+            //console.log(redRocket.width + ", " + redRocket.height + "; " + arcadeWindow.width + ", " + arcadeWindow.height)
+            //redRocket.rotation = -mouseRate;
+            //redRocket.transformOrigin = 7; //bottom of rocket square
+            //BAD redRocket.rotation.origin.x = arcadeWindow.width/2;
+            //BAD redRocket.rotation.origin.y = redRocket.rocketHeight/5;
+        }
+    }
 }
