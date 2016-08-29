@@ -25,7 +25,7 @@ Rectangle
     visible: true
 
     property int activeAsteroids: 0
-    property int startingAsteroids: 1
+    property int startingAsteroids: 10
     property int totalAsteroids: startingAsteroids + additionalAsteroids
 
     property int  score: 0
